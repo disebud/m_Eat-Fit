@@ -16,8 +16,8 @@
         android:text="NEXT"
         android:fontFamily="@font/poppins_regular"
         android:textStyle="bold"
-        android:textColor="#FFFFFF"
-        android:backgroundTint="#FF9800"
+        android:backgroundTint="@color/orangeSecond"
+        android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -27,11 +27,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="60dp"
-        android:backgroundTint="#FF5722"
         android:text="SKIP"
         android:fontFamily="@font/poppins_regular"
         android:textStyle="bold"
-        android:textColor="#FFFFFF"
+        android:backgroundTint="@color/orangeMain"
+        android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

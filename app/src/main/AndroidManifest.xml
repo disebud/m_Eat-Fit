@@ -8,8 +8,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents">
-        <activity android:name=".RegisterActivity"></activity>
-        <activity android:name=".SignInActivity" />
+        <activity android:name=".sign.register.RegisterPhotoActivity"></activity>
+        <activity android:name=".sign.register.RegisterActivity" />
+        <activity android:name=".sign.sign_in.SignInActivity" />
         <activity android:name=".Intro.IntroThreeActivity" />
         <activity android:name=".Intro.IntroTwoActivity" />
         <activity android:name=".Intro.IntroOneActivity" />

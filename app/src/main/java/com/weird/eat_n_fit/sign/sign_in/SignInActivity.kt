@@ -1,10 +1,10 @@
-package com.weird.eat_n_fit
+package com.weird.eat_n_fit.sign.sign_in
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.weird.eat_n_fit.Intro.IntroTwoActivity
-import kotlinx.android.synthetic.main.activity_intro_one.*
+import com.weird.eat_n_fit.R
+import com.weird.eat_n_fit.sign.register.RegisterActivity
 import kotlinx.android.synthetic.main.activity_sign_in.*
 
 class SignInActivity : AppCompatActivity() {

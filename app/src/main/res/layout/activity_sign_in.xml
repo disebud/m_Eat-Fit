@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/sign_in"
-    tools:context=".SignInActivity">
+    tools:context=".sign.sign_in.SignInActivity">
 
     <LinearLayout
         android:id="@+id/email_sign"
@@ -22,25 +22,23 @@
         <ImageButton
             android:layout_width="60dp"
             android:layout_height="match_parent"
-            android:backgroundTint="#FFC107"
-            android:tint="#FFFFFF"
+            android:backgroundTint="@color/orangeFourth"
+            android:tint="@color/colorWhite"
             android:src="@drawable/ic_baseline_alternate_email_24" />
 
-
-
-                <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/username"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:backgroundTint="#FF9800"
-                android:backgroundTintMode="screen"
-                    android:textColor="#FFFFFF"
-                android:hint="E-MAIL"
-                    android:fontFamily="@font/poppins_regular"
-                    android:textColorHint="#B1B1B1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/username_signIn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/orangeThird"
+            android:backgroundTintMode="screen"
+            android:textColor="@color/colorWhite"
+            android:hint="E-MAIL"
+            android:fontFamily="@font/poppins_regular"
+            android:textColorHint="@color/colorGray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </LinearLayout>
@@ -60,49 +58,49 @@
         <ImageButton
             android:layout_width="60dp"
             android:layout_height="match_parent"
-            android:backgroundTint="#FFC107"
+            android:backgroundTint="@color/orangeFourth"
             android:src="@drawable/ic_baseline_lock_24"
-            android:tint="#FFFFFF" />
+            android:tint="@color/colorWhite" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:boxStrokeColor="#FF9800"
-            android:textColorHint="#B1B1B1"
-            app:hintTextColor="#FF9800"
+            app:boxStrokeColor="@color/orangeThird"
+            android:textColorHint="@color/colorGray"
+            app:hintTextColor="@color/orangeThird"
             app:passwordToggleEnabled="true">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/password"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:backgroundTintMode="screen"
-            android:textColor="#FFFFFF"
-            android:hint="PASSSWORD"
-            android:fontFamily="@font/poppins_regular"
-            android:inputType="textPassword"
-            android:textColorHint="#B1B1B1"
-            app:hintTextColor="#FF9800"
-            app:passwordToggleEnabled="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password_signIn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTintMode="screen"
+                android:hint="PASSSWORD"
+                android:fontFamily="@font/poppins_regular"
+                android:inputType="textPassword"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorGray"
+                app:hintTextColor="@color/orangeThird"
+                app:passwordToggleEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
 
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/signIn"
+        android:id="@+id/btn_signIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:backgroundTint="#FF9800"
+        android:backgroundTint="@color/orangeSecond"
+        android:textColor="@color/colorWhite"
         android:textSize="18sp"
         android:text="Sign In"
         android:fontFamily="@font/poppins_regular"
-        app:cornerRadius="10dp"
-        android:textColor="#FFFFFF"
+        app:cornerRadius="20dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -113,12 +111,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:backgroundTint="#FF5722"
+        android:backgroundTint="@color/orangeMain"
+        android:textColor="@color/colorWhite"
         android:text="Register"
         android:textSize="18sp"
         android:fontFamily="@font/poppins_regular"
-        app:cornerRadius="10dp"
-        android:textColor="#FFFFFF"
+        app:cornerRadius="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -135,7 +133,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signIn" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_signIn" />
 
     <TextView
         android:id="@+id/dontHave"
