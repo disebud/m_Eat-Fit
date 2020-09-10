@@ -81,7 +81,6 @@
                 android:textColor="@color/colorWhite"
                 android:textColorHint="@color/colorGray"
                 app:hintTextColor="@color/orangeThird"
-                app:passwordToggleEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

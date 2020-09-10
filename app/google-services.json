@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "721322119598",
+    "firebase_url": "https://eatnfit-project.firebaseio.com",
+    "project_id": "eatnfit-project",
+    "storage_bucket": "eatnfit-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:721322119598:android:1cc7959e4f1f4d9db7b83f",
+        "android_client_info": {
+          "package_name": "com.weird.eat_n_fit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "721322119598-jlut97s3n8okhilg3hm68ou63sksisdp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwtEBKmcVIftayFYWDUuGW6Z_I_EwKYYk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "721322119598-jlut97s3n8okhilg3hm68ou63sksisdp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

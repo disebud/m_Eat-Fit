@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Eat N Fit</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="order">ORDER</string>
+    <string name="top_up_balance">TOP UP BALANCE</string>
+    <string name="idr_500_000">IDR. 500.000</string>
+    <string name="my_wallet">MY WALLET</string>
 </resources>

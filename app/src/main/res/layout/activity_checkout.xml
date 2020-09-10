@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@drawable/order_flat"
+tools:context=".CheckoutActivity">
+
+<ImageView
+    android:id="@+id/back_next_order"
+    android:layout_width="52dp"
+    android:layout_height="49dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:src="@drawable/back"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:srcCompat="@drawable/back" />
+
+
+<TextView
+    android:id="@+id/title_checkout"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="60dp"
+    android:fontFamily="@font/poppins_bold"
+    android:gravity="center"
+    android:text="CHECKOUT"
+    android:textColor="@color/colorBlack"
+    android:textSize="25sp"
+    android:textStyle="bold"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/title_to"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginStart="22dp"
+        android:background="@color/orangeThird"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/title_checkout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="TO "
+            android:textColor="@color/colorBlack"
+            android:textSize="22dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/colorBlack"></View>
+
+    </LinearLayout>
+
+<LinearLayout
+    android:id="@+id/ln_date_ck"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_marginEnd="25dp"
+    android:layout_marginStart="22dp"
+    android:background="@color/orangeFourth"
+    android:orientation="horizontal"
+    app:layout_constraintTop_toBottomOf="@+id/title_to">
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/ic_baseline_timer_24" />
+
+    <LinearLayout
+        android:id="@+id/ln_date_checkout"
+        android:layout_width="31dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="1"
+        android:background="@color/orangeFourth"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_date_ck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Date"
+            android:textColor="@color/colorBlack"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/tv_time_ck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Time"
+            android:textColor="@color/colorBlack"
+            android:textSize="15dp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ln_result_date_checkout"
+        android:layout_width="131dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="1"
+        android:background="@color/orangeFourth"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_result_date_ck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/poppins_bold"
+            android:layout_gravity="end"
+            android:text="20,September 2020"
+            android:textColor="@color/colorBlack"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/tv_result_time_ck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_weight="1"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Dinner"
+            android:textColor="@color/colorBlack"
+            android:textSize="15dp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/title_items"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:layout_marginStart="22dp"
+        android:background="@color/orangeThird"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/ln_date_ck">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Items "
+            android:textColor="@color/colorBlack"
+            android:textSize="22dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/colorBlack"></View>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ln_items"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginStart="22dp"
+        android:background="@color/orangeFourth"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/title_items">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/ic_home_not_active" />
+
+        <LinearLayout
+            android:id="@+id/ln_item_porsi"
+            android:layout_width="31dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:background="@color/orangeFourth"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Acara Ulang Tahun"
+                android:textColor="@color/colorBlack"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/tv_porsi_ck"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Porsi"
+                android:textColor="@color/colorBlack"
+                android:textSize="12dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ln_idr_porsi"
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:background="@color/orangeFourth"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_idr_ck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Rp.10.000"
+                android:textColor="@color/colorBlack"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/tv_porsi_idr_ck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_bold"
+                android:text="100"
+                android:textColor="@color/colorBlack"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ln_totals"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:layout_marginStart="22dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/ln_items">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Total "
+            android:layout_weight="1"
+            android:textColor="@color/colorBlack"
+            android:textSize="22dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="25dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Rp.100.000"
+            android:textAlignment="textEnd"
+            android:textColor="@color/colorBlack"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+    android:id="@+id/title_payment"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="25dp"
+    android:layout_marginStart="22dp"
+    android:background="@color/orangeThird"
+    android:orientation="horizontal"
+    app:layout_constraintTop_toBottomOf="@+id/ln_totals">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Payment "
+        android:textColor="@color/colorBlack"
+        android:textSize="22dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/colorBlack"></View>
+
+</LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ln_wallet"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginStart="22dp"
+        android:background="@color/orangeFourth"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/title_payment">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/account_balance_wallet" />
+
+        <LinearLayout
+            android:id="@+id/ln_wallet_balance"
+            android:layout_width="11dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:background="@color/orangeFourth"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_e_wallet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_bold"
+                android:text="E-Wallet"
+                android:textColor="@color/colorBlack"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/tv_balance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Total Balance"
+                android:textColor="@color/colorBlack"
+                android:textSize="12dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ln_real_balance"
+            android:layout_width="33dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:background="@color/orangeFourth"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_real_balance"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Rp.1.000.000"
+                android:textAlignment="textEnd"
+                android:textColor="@color/colorBlack"
+                android:textSize="18dp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/title_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:layout_marginStart="22dp"
+        android:background="@color/orangeThird"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/ln_wallet">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Address "
+            android:textColor="@color/colorBlack"
+            android:textSize="22dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/colorBlack"></View>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ln_address"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginStart="22dp"
+        android:background="@color/orangeFourth"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/title_address">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/ic_location" />
+
+        <LinearLayout
+            android:id="@+id/ln_content_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:background="@color/orangeFourth"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_content_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Bekasi,Indonesia\nKayuringin Jaya"
+                android:textColor="@color/colorBlack"
+                android:textSize="18dp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_payment_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="@color/orangeSecond"
+        android:fontFamily="@font/poppins_regular"
+        android:text="PAYMENT NOW"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_cancel_order"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+<com.google.android.material.button.MaterialButton
+    android:id="@+id/btn_cancel_order"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="32dp"
+    android:layout_marginEnd="32dp"
+    android:layout_marginBottom="10dp"
+    android:backgroundTint="@color/orangeFourth"
+    android:fontFamily="@font/poppins_regular"
+    android:text="cancel"
+    android:textColor="@color/colorWhite"
+    android:textSize="18sp"
+    android:textStyle="bold"
+    app:cornerRadius="20dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

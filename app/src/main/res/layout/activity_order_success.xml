@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@drawable/order_flat"
+tools:context=".OrderSuccessActivity">
+
+
+<TextView
+    android:id="@+id/title_success_order"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="60dp"
+    android:fontFamily="@font/poppins_bold"
+    android:gravity="center"
+    android:text="SUCCESS"
+    android:textColor="@color/colorBlack"
+    android:textSize="25sp"
+    android:textStyle="bold"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+
+<com.google.android.material.button.MaterialButton
+    android:id="@+id/btn_view_transaction"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="32dp"
+    android:layout_marginEnd="32dp"
+    android:backgroundTint="@color/orangeSecond"
+    android:fontFamily="@font/poppins_regular"
+    android:text="VIEW TRANSACTION"
+    android:textColor="@color/colorWhite"
+    android:textSize="18sp"
+    android:textStyle="bold"
+    app:cornerRadius="20dp"
+    app:layout_constraintBottom_toTopOf="@+id/btn_home_success"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent" />
+
+<com.google.android.material.button.MaterialButton
+    android:id="@+id/btn_home_success"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="32dp"
+    android:layout_marginEnd="32dp"
+    android:layout_marginBottom="10dp"
+    android:backgroundTint="@color/orangeFourth"
+    android:fontFamily="@font/poppins_regular"
+    android:text="Home"
+    android:textColor="@color/colorWhite"
+    android:textSize="18sp"
+    android:textStyle="bold"
+    app:cornerRadius="20dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="331dp"
+        android:layout_height="500dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/success_flat"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_home_success"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/success_flat" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
