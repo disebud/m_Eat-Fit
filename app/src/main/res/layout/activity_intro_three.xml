@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/intro_three"
-    tools:context=".Intro.IntroThreeActivity">
+    tools:context=".ui.Intro.IntroThreeActivity">
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/next_three"

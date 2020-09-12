@@ -1,4 +1,4 @@
-package com.weird.eat_n_fit.utils
+package com.weird.eat_n_fit.ui.utils
 
 import android.content.Context
 import android.content.SharedPreferences

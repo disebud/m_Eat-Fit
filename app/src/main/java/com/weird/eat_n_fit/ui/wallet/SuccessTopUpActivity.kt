@@ -1,12 +1,12 @@
-package com.weird.eat_n_fit.wallet
+package com.weird.eat_n_fit.ui.wallet
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.weird.eat_n_fit.R
 
-class WalletActivity : AppCompatActivity() {
+class SuccessTopUpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_wallet)
+        setContentView(R.layout.activity_success_top_up)
     }
 }

@@ -1,12 +1,12 @@
-package com.weird.eat_n_fit.sign.register
+package com.weird.eat_n_fit.ui.wallet
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.weird.eat_n_fit.R
 
-class RegisterPhotoActivity : AppCompatActivity() {
+class TopUpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register_photo)
+        setContentView(R.layout.activity_top_up)
     }
 }

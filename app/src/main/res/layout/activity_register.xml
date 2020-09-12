@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/register"
-    tools:context=".sign.register.RegisterActivity">
+    tools:context=".ui.sign.register.RegisterActivity">
 
     <LinearLayout
-        android:id="@+id/linear_name_register"
+        android:id="@+id/linear_f_name_register"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginStart="50dp"
@@ -27,15 +27,51 @@
             android:src="@drawable/ic_baseline_person_24" />
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/name_register"
+            android:id="@+id/et_f_name_register"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:backgroundTint="@color/orangeThird"
             android:backgroundTintMode="screen"
             android:textColor="@color/colorWhite"
             android:textColorHint="@color/colorGray"
-            android:hint="Full Name"
+            android:hint="First Name"
             android:fontFamily="@font/poppins_regular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_l_name_register"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="50dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear_f_name_register">
+
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="#FFC107"
+            android:src="@drawable/ic_baseline_location_on_24"
+            android:tint="#FFFFFF" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_l_name_register"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/orangeThird"
+            android:backgroundTintMode="screen"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorGray"
+            android:fontFamily="@font/poppins_regular"
+            android:hint="Last Name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -53,7 +89,7 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linear_name_register">
+        app:layout_constraintTop_toBottomOf="@+id/linear_l_name_register">
 
         <ImageButton
             android:layout_width="60dp"
@@ -126,7 +162,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linear_address_register"
+        android:id="@+id/linear_gender_register"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginStart="50dp"
@@ -145,7 +181,7 @@
             android:tint="#FFFFFF" />
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/address_register"
+            android:id="@+id/et_gender_register"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:backgroundTint="@color/orangeThird"
@@ -153,7 +189,9 @@
             android:textColor="@color/colorWhite"
             android:textColorHint="@color/colorGray"
             android:fontFamily="@font/poppins_regular"
-            android:hint="Address"
+            android:hint="Gender (L/P)"
+            android:digits="01"
+            android:inputType="textCapSentences|text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

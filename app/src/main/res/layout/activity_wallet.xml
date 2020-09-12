@@ -5,7 +5,7 @@ xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:background="@drawable/order_flat"
-tools:context=".wallet.WalletActivity">
+tools:context=".ui.wallet.WalletActivity">
 
 <ImageView
     android:id="@+id/back_wallet_settingsr"
@@ -88,7 +88,7 @@ tools:context=".wallet.WalletActivity">
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/all_transaction"
-        tools:listitem="@layout/row_item_transaksi" />
+        tools:listitem="@layout/row_item_wallet_transaksi" />
 
 
 

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
-    tools:context=".home.DashboardFragment">
+    tools:context=".ui.home.DashboardFragment">
 
     <!--    android:background="@drawable/activity_home"-->
 <!--    <androidx.constraintlayout.widget.ConstraintLayout-->
@@ -104,11 +104,13 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_now_playing"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="80dp"
                 android:layout_marginStart="8dp"
+                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ln_now" />
+                app:layout_constraintTop_toBottomOf="@+id/ln_now"
+                tools:listitem="@layout/row_item_dashboard_banner"/>
 
             <LinearLayout
                 android:id="@+id/title_paket"
@@ -363,7 +365,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/title_recom" />
+                app:layout_constraintTop_toBottomOf="@+id/title_recom"
+                tools:listitem="@layout/row_item_dashboard_popular"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

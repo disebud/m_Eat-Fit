@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fragment_flat"
-    tools:context=".home.SettingsFragment">
+    tools:context=".ui.home.settings.SettingsFragment">
 
     <TextView
         android:id="@+id/title_transaksi"

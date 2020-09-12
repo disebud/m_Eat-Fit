@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/signInActivity">
+
+    <action
+        android:id="@+id/action_to_signInActivity"
+        app:destination="@id/signInActivity" />
+
+    <activity
+        android:id="@+id/signInActivity"
+        android:name="com.weird.eat_n_fit.ui.sign.signIn.screen.SignInActivity"
+        android:label="activity_sign_in"
+        tools:layout="@layout/activity_sign_in" />
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.weird.eat_n_fit.ui.home.DashboardFragment"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+    <fragment
+        android:id="@+id/orderFragment"
+        android:name="com.weird.eat_n_fit.ui.home.order.OrderFragment"
+        android:label="fragment_order"
+        tools:layout="@layout/fragment_order" />
+    <activity
+        android:id="@+id/homeActivity"
+        android:name="com.weird.eat_n_fit.ui.home.HomeActivity"
+        android:label="activity_home"
+        tools:layout="@layout/activity_home" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.weird.eat_n_fit.ui.home.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <activity
+        android:id="@+id/detailPaketActivity"
+        android:name="com.weird.eat_n_fit.DetailPaketActivity"
+        android:label="activity_detail_paket"
+        tools:layout="@layout/activity_detail_paket" />
+    <activity
+        android:id="@+id/detailMenuActivity"
+        android:name="com.weird.eat_n_fit.DetailMenuActivity"
+        android:label="activity_detail_menu"
+        tools:layout="@layout/activity_detail_menu" />
+    <activity
+        android:id="@+id/nextOrderActivity"
+        android:name="com.weird.eat_n_fit.NextOrderActivity"
+        android:label="activity_next_order"
+        tools:layout="@layout/activity_next_order" />
+    <activity
+        android:id="@+id/checkoutActivity"
+        android:name="com.weird.eat_n_fit.CheckoutActivity"
+        android:label="activity_checkout"
+        tools:layout="@layout/activity_checkout" />
+    <activity
+        android:id="@+id/orderSuccessActivity"
+        android:name="com.weird.eat_n_fit.OrderSuccessActivity"
+        android:label="activity_order_success"
+        tools:layout="@layout/activity_order_success" />
+    <activity
+        android:id="@+id/detailTransactionActivity"
+        android:name="com.weird.eat_n_fit.DetailTransactionActivity"
+        android:label="activity_detail_transaction"
+        tools:layout="@layout/activity_detail_transaction" />
+    <activity
+        android:id="@+id/walletActivity"
+        android:name="com.weird.eat_n_fit.ui.wallet.WalletActivity"
+        android:label="activity_wallet"
+        tools:layout="@layout/activity_wallet" />
+    <activity
+        android:id="@+id/topUpActivity"
+        android:name="com.weird.eat_n_fit.ui.wallet.TopUpActivity"
+        android:label="activity_top_up"
+        tools:layout="@layout/activity_top_up" />
+    <activity
+        android:id="@+id/successTopUpActivity"
+        android:name="com.weird.eat_n_fit.ui.wallet.SuccessTopUpActivity"
+        android:label="activity_success_top_up"
+        tools:layout="@layout/activity_success_top_up" />
+</navigation>

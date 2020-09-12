@@ -1,10 +1,12 @@
-package com.weird.eat_n_fit.home
+package com.weird.eat_n_fit.ui.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import com.weird.eat_n_fit.R
+import com.weird.eat_n_fit.ui.home.order.OrderFragment
+import com.weird.eat_n_fit.ui.home.settings.SettingsFragment
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
