@@ -1,9 +1,6 @@
-package com.weird.eat_n_fit
+package com.weird.eat_n_fit.ui.order
 
 import android.app.DatePickerDialog
-import android.app.DatePickerDialog.OnDateSetListener
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -13,6 +10,7 @@ import android.widget.NumberPicker
 import android.widget.NumberPicker.OnValueChangeListener
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.weird.eat_n_fit.R
 import kotlinx.android.synthetic.main.activity_next_order.*
 import java.text.SimpleDateFormat
 import java.util.*

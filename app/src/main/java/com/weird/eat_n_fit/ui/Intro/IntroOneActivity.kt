@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.weird.eat_n_fit.R
-import com.weird.eat_n_fit.sign.sign_in.SignInActivity
+import com.weird.eat_n_fit.ui.sign.signIn.screen.SignInActivity
 import kotlinx.android.synthetic.main.activity_intro_one.*
 import com.weird.eat_n_fit.ui.utils.Preferences
 

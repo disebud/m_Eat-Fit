@@ -24,12 +24,12 @@
         <activity android:name="com.weird.eat_n_fit.ui.wallet.SuccessTopUpActivity"></activity>
         <activity android:name="com.weird.eat_n_fit.ui.wallet.TopUpActivity" />
         <activity android:name="com.weird.eat_n_fit.ui.wallet.WalletActivity" />
-        <activity android:name=".DetailTransactionActivity" />
-        <activity android:name=".OrderSuccessActivity" />
-        <activity android:name=".CheckoutActivity" />
-        <activity android:name=".NextOrderActivity" />
-        <activity android:name=".DetailMenuActivity" />
-        <activity android:name=".DetailPaketActivity" />
+        <activity android:name=".ui.order.DetailTransactionActivity" />
+        <activity android:name=".ui.order.OrderSuccessActivity" />
+        <activity android:name=".ui.order.CheckoutActivity" />
+        <activity android:name=".ui.order.NextOrderActivity" />
+        <activity android:name=".ui.order.DetailMenuActivity" />
+        <activity android:name=".ui.order.DetailPaketActivity" />
         <activity android:name="com.weird.eat_n_fit.ui.home.HomeActivity" />
         <activity android:name=".ui.sign.register.RegisterPhotoActivity" />
         <activity android:name=".ui.sign.register.RegisterActivity" />
@@ -37,7 +37,7 @@
         <activity android:name="com.weird.eat_n_fit.ui.Intro.IntroThreeActivity" />
         <activity android:name="com.weird.eat_n_fit.ui.Intro.IntroTwoActivity" />
         <activity android:name="com.weird.eat_n_fit.ui.Intro.IntroOneActivity" />
-        <activity android:name=".SplashScreenActivity">
+        <activity android:name=".ui.Intro.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -16,6 +16,7 @@ import com.example.enigma_bank.ui.user.User
 import com.example.enigma_bank.ui.user.UserViewModel
 import com.squareup.picasso.Picasso
 import com.weird.eat_n_fit.R
+import com.weird.eat_n_fit.ui.sign.signIn.screen.SignInActivity
 import kotlinx.android.synthetic.main.fragment_dashboard.*
 
 
@@ -58,11 +59,19 @@ class DashboardFragment : Fragment() {
                 Picasso.get().load("${getString(R.string.image_link)}$id.jpg").into(iv_profile)
             })
         } else {
-            view.findNavController().navigate(R.id.action_to_signInActivity)
+//            view.findNavController().navigate(R.id.action_to_signInActivity)
+            val intent = Intent(
+                context,
+                SignInActivity::class.java)
+            startActivity(intent)
         }
 
         if (!sharedPreferences!!.contains(getString(R.string.auth_token))) {
-            view.findNavController().navigate(R.id.action_to_signInActivity)
+            //            view.findNavController().navigate(R.id.action_to_signInActivity)
+            val intent = Intent(
+                context,
+                SignInActivity::class.java)
+            startActivity(intent)
         }
 
     }

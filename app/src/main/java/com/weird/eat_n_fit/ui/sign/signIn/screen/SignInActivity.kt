@@ -12,6 +12,7 @@ import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.navigation.NavController
 import com.weird.eat_n_fit.R
+import com.weird.eat_n_fit.ui.home.DashboardFragment
 import com.weird.eat_n_fit.ui.home.HomeActivity
 import com.weird.eat_n_fit.ui.sign.register.RegisterActivity
 import com.weird.eat_n_fit.ui.sign.signIn.SigninResponse
@@ -70,7 +71,7 @@ class SignInActivity : AppCompatActivity() {
                 ).show()
             } else {
                 signInViewModel.signIn(UserSignInModel(inputEmail, inputPassword))
-                signInViewModel.userData.observe(viewLifecycleOwner, {
+                signInViewModel.userData.observe(this, {
                     if (it != null) {
                         if (it.user.user_level == "2") {
                             with(sharedPreferences?.edit()) {
@@ -89,9 +90,10 @@ class SignInActivity : AppCompatActivity() {
                                 ).show()
                                 val intent = Intent(
                                     this@SignInActivity,
-                                    HomeActivity::class.java
-                                )
+                                    HomeActivity::class.java)
                                 startActivity(intent)
+                                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                                finish()
                             }
                         }
                     } else {

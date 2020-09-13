@@ -1,11 +1,11 @@
-package com.weird.eat_n_fit
+package com.weird.eat_n_fit.ui.Intro
 
 import android.animation.ObjectAnimator
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import com.weird.eat_n_fit.ui.Intro.IntroOneActivity
+import com.weird.eat_n_fit.R
 import kotlinx.android.synthetic.main.activity_splash_screen.*
 
 class SplashScreenActivity : AppCompatActivity() {

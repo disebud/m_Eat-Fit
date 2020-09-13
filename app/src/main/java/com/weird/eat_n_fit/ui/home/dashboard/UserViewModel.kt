@@ -2,7 +2,8 @@ package com.example.enigma_bank.ui.user
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.example.enigma_bank.config.RetrofitBuilder
+import com.weird.eat_n_fit.config.RetrofitBuilder
+
 
 class UserViewModel : ViewModel() {
 

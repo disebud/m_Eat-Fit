@@ -5,7 +5,7 @@ xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:background="@drawable/order_flat"
-tools:context=".OrderSuccessActivity">
+tools:context=".ui.order.OrderSuccessActivity">
 
 
 <TextView
