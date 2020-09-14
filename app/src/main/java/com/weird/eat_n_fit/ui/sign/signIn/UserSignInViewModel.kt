@@ -3,7 +3,6 @@ package com.weird.eat_n_fit.ui.sign.signIn
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.weird.eat_n_fit.config.RetrofitBuilder
-import com.weird.eat_n_fit.sign.sign_in.SignInRepository
 
 class UserSignInViewModel : ViewModel() {
 

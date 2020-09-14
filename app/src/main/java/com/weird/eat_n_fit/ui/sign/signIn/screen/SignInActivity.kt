@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import com.weird.eat_n_fit.R
 import com.weird.eat_n_fit.ui.home.DashboardFragment
@@ -26,7 +27,7 @@ class SignInActivity : AppCompatActivity() {
 
     private val signInViewModel by viewModels<UserSignInViewModel>()
     private var userData: SigninResponse = SigninResponse()
-    private lateinit var navController: NavController
+//    private lateinit var navController: NavController
     private var sharedPreferences: SharedPreferences? = null
 
 
@@ -53,7 +54,7 @@ class SignInActivity : AppCompatActivity() {
             val inputEmail = email_signIn_input.text.toString()
             val inputPassword = password_signIn_input.text.toString()
 
-            if (inputEmail.equals("")) {
+            if (inputEmail == "") {
                 email_signIn_input.error = "Please Fill Your Email"
                 email_signIn_input.requestFocus()
                 Toast.makeText(
@@ -61,7 +62,7 @@ class SignInActivity : AppCompatActivity() {
                     "User credentials must be filled!",
                     Toast.LENGTH_SHORT
                 ).show()
-            } else if (inputPassword.equals("")) {
+            } else if (inputPassword == "") {
                 password_signIn_input.error = "Please Fill Your Password"
                 password_signIn_input.requestFocus()
                 Toast.makeText(
@@ -94,6 +95,7 @@ class SignInActivity : AppCompatActivity() {
                                 startActivity(intent)
                                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                                 finish()
+                                this?.apply()
                             }
                         }
                     } else {
