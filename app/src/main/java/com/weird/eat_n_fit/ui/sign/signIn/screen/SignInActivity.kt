@@ -7,33 +7,40 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.LifecycleOwner
-import androidx.navigation.NavController
 import com.weird.eat_n_fit.R
-import com.weird.eat_n_fit.ui.home.DashboardFragment
 import com.weird.eat_n_fit.ui.home.HomeActivity
-import com.weird.eat_n_fit.ui.sign.register.RegisterActivity
+import com.weird.eat_n_fit.ui.sign.signUp.SignUpActivity
 import com.weird.eat_n_fit.ui.sign.signIn.SigninResponse
 import com.weird.eat_n_fit.ui.sign.signIn.UserSignInModel
 import com.weird.eat_n_fit.ui.sign.signIn.UserSignInViewModel
+import com.weird.eat_n_fit.ui.utils.Preferences
 import kotlinx.android.synthetic.main.activity_sign_in.*
-import kotlinx.android.synthetic.main.fragment_settings.*
 
 
 class SignInActivity : AppCompatActivity() {
 
     private val signInViewModel by viewModels<UserSignInViewModel>()
     private var userData: SigninResponse = SigninResponse()
-    private lateinit var navController: NavController
+//    private lateinit var navController: NavController
     private var sharedPreferences: SharedPreferences? = null
+
+    lateinit var preferences: Preferences
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
         supportActionBar?.hide()
+
+        preferences = Preferences(this)
+        preferences.setValues("Intro", "1")
+        if (preferences.getValues("status").equals("1")) {
+            finishAffinity()
+
+            val intent = Intent(this@SignInActivity,
+                HomeActivity::class.java)
+            startActivity(intent)
+        }
 
         sharedPreferences = getSharedPreferences(
             getString(R.string.shared_preferences_name),
@@ -53,7 +60,7 @@ class SignInActivity : AppCompatActivity() {
             val inputEmail = email_signIn_input.text.toString()
             val inputPassword = password_signIn_input.text.toString()
 
-            if (inputEmail.equals("")) {
+            if (inputEmail == "") {
                 email_signIn_input.error = "Please Fill Your Email"
                 email_signIn_input.requestFocus()
                 Toast.makeText(
@@ -61,7 +68,7 @@ class SignInActivity : AppCompatActivity() {
                     "User credentials must be filled!",
                     Toast.LENGTH_SHORT
                 ).show()
-            } else if (inputPassword.equals("")) {
+            } else if (inputPassword == "") {
                 password_signIn_input.error = "Please Fill Your Password"
                 password_signIn_input.requestFocus()
                 Toast.makeText(
@@ -73,7 +80,7 @@ class SignInActivity : AppCompatActivity() {
                 signInViewModel.signIn(UserSignInModel(inputEmail, inputPassword))
                 signInViewModel.userData.observe(this, {
                     if (it != null) {
-                        if (it.user.user_level == "2") {
+//                        if (it.user.user_level == "2") {
                             with(sharedPreferences?.edit()) {
                                 this?.putString(
                                     getString(R.string.auth_token),
@@ -94,8 +101,10 @@ class SignInActivity : AppCompatActivity() {
                                 startActivity(intent)
                                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                                 finish()
+                                this?.apply()
+                                preferences.setValues("status", "1")
                             }
-                        }
+//                        }
                     } else {
                         Toast.makeText(
                             this@SignInActivity,
@@ -108,10 +117,10 @@ class SignInActivity : AppCompatActivity() {
 
         }
 
-        btn_register.setOnClickListener {
+        btn_sign_up.setOnClickListener {
             val intent = Intent(
                 this@SignInActivity,
-                RegisterActivity::class.java
+                SignUpActivity::class.java
             )
             startActivity(intent)
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);

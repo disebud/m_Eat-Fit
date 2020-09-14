@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/register"
-    tools:context=".ui.sign.register.RegisterActivity">
+    tools:context=".ui.sign.signUp.SignUpActivity">
 
     <LinearLayout
         android:id="@+id/linear_f_name_register"
@@ -59,7 +59,7 @@
             android:layout_width="60dp"
             android:layout_height="match_parent"
             android:backgroundTint="#FFC107"
-            android:src="@drawable/ic_baseline_location_on_24"
+            android:src="@drawable/ic_baseline_person_24"
             android:tint="#FFFFFF" />
 
         <com.google.android.material.textfield.TextInputEditText
@@ -177,7 +177,7 @@
             android:layout_width="60dp"
             android:layout_height="match_parent"
             android:backgroundTint="#FFC107"
-            android:src="@drawable/ic_baseline_location_on_24"
+            android:src="@drawable/ic_gender"
             android:tint="#FFFFFF" />
 
         <com.google.android.material.textfield.TextInputEditText

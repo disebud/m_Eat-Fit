@@ -9,5 +9,5 @@
     <string name="shared_preferences_name">com.example.enigma_bank</string>
     <string name="auth_token">TOKEN</string>
     <string name="user_id">USER_ID</string>
-    <string name="image_link">http://cd0962df171e.ngrok.io/images/</string>
+    <string name="image_link">http://4c0c492e0018.ngrok.io/images/</string>
 </resources>

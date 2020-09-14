@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/photo"
-    tools:context=".ui.sign.register.RegisterPhotoActivity">
+    tools:context=".ui.sign.signUp.SignUpPhotoActivity">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
         android:textSize="20sp"
-        android:text="Didik Setya Budi"
+        android:text="Weird Project"
         android:textColor="@color/colorWhite"
         android:fontFamily="@font/poppins_bold"
         app:layout_constraintBottom_toTopOf="@+id/iv_profile"

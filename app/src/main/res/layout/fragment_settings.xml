@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fragment_flat"
+    android:background="@drawable/main_2"
     tools:context=".ui.home.settings.SettingsFragment">
 
     <TextView
@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/iv_profile"
+        android:id="@+id/iv_profile_settings"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="80dp"
@@ -33,7 +33,7 @@
         app:layout_constraintTop_toBottomOf="@+id/title_transaksi" />
 
     <TextView
-        android:id="@+id/iv_nama"
+        android:id="@+id/tv_nama_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -43,7 +43,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_profile" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_profile_settings" />
 
     <TextView
         android:id="@+id/tv_email"
@@ -54,7 +54,7 @@
         android:textColor="@color/colorBlack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_nama" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_nama_profile" />
 
     <TextView
         android:id="@+id/tv_my_wallet"

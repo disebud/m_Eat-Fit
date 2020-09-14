@@ -53,7 +53,7 @@ class DashboardFragment : Fragment() {
             userViewModel.user.observe(viewLifecycleOwner, {
                 val bal = "Rp. ${it.user_balance}"
                 tv_saldo.text = bal
-                val name = "${it.user_f_name} ${it.user_l_name}"
+                val name = "${it.user_f_name}"
                 tv_nama.text = name
                 user = it
                 Picasso.get().load("${getString(R.string.image_link)}$id.jpg").into(iv_profile)
