@@ -79,14 +79,14 @@ class SettingsFragment : Fragment() {
             startActivity(intent)
         }
 
-        tv_edit_profile2.setOnClickListener {
-            val intent = Intent(
-                context,
-                SignUpActivity::class.java
-            )
-            startActivity(intent)
-            preferences.setValues("status", "1")
-        }
+//        tv_edit_profile2.setOnClickListener {
+//            val intent = Intent(
+//                context,
+//                SignUpActivity::class.java
+//            )
+//            startActivity(intent)
+//            preferences.setValues("status", "1")
+//        }
 
     }
 

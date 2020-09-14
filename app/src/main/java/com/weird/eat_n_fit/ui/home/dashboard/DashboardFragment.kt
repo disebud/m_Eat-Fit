@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
@@ -25,6 +26,22 @@ class DashboardFragment : Fragment() {
     private var sharedPreferences: SharedPreferences? = null
     private val userViewModel by activityViewModels<UserViewModel>()
     private var user: User = User()
+
+    var imageSlide = intArrayOf(
+    R.drawable.cr_1,
+    R.drawable.cr_2,
+    R.drawable.cr_3,
+    R.drawable.cr_4,
+    R.drawable.cr_5
+    )
+
+    var nameImg = arrayOf(
+        "Fresh",
+        "Refresh",
+        "Seger",
+        "Delicious",
+        "Healthy"
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -74,6 +91,16 @@ class DashboardFragment : Fragment() {
             startActivity(intent)
         }
 
+
+        carouselView.pageCount = nameImg.size
+
+        carouselView.setImageListener{position, imageView ->
+            imageView.setImageResource(imageSlide[position])
+        }
+
+        carouselView.setImageClickListener { position ->
+            Toast.makeText(context, nameImg[position],Toast.LENGTH_SHORT).show()
+        }
     }
 
 

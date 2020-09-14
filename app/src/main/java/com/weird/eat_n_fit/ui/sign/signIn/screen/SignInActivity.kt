@@ -33,7 +33,7 @@ class SignInActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         preferences = Preferences(this)
-//        preferences.setValues("Intro", "2")
+        preferences.setValues("Intro", "2")
         if (preferences.getValues("status").equals("0")) {
             finishAffinity()
 
