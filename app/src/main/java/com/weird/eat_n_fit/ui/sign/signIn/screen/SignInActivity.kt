@@ -9,7 +9,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.weird.eat_n_fit.R
 import com.weird.eat_n_fit.ui.home.HomeActivity
-import com.weird.eat_n_fit.ui.sign.signUp.SignUpActivity
+//import com.weird.eat_n_fit.ui.sign.signUp.SignUpActivity
 import com.weird.eat_n_fit.ui.sign.signIn.SigninResponse
 import com.weird.eat_n_fit.ui.sign.signIn.UserSignInModel
 import com.weird.eat_n_fit.ui.sign.signIn.UserSignInViewModel
@@ -118,13 +118,13 @@ class SignInActivity : AppCompatActivity() {
         }
 
         btn_sign_up.setOnClickListener {
-            val intent = Intent(
-                this@SignInActivity,
-                SignUpActivity::class.java
-            )
-            startActivity(intent)
-            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-            finish()
+//            val intent = Intent(
+//                this@SignInActivity,
+//                SignUpActivity::class.java
+//            )
+//            startActivity(intent)
+//            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+//            finish()
         }
     }
 }
