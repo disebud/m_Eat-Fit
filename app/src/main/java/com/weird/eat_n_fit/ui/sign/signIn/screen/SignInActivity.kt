@@ -33,13 +33,15 @@ class SignInActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         preferences = Preferences(this)
-        preferences.setValues("Intro", "1")
-        if (preferences.getValues("status").equals("1")) {
+//        preferences.setValues("Intro", "2")
+        if (preferences.getValues("status").equals("0")) {
             finishAffinity()
 
             val intent = Intent(this@SignInActivity,
                 HomeActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            finish()
         }
 
         sharedPreferences = getSharedPreferences(
@@ -102,7 +104,7 @@ class SignInActivity : AppCompatActivity() {
                                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                                 finish()
                                 this?.apply()
-                                preferences.setValues("status", "1")
+                                preferences.setValues("status", "0")
                             }
 //                        }
                     } else {

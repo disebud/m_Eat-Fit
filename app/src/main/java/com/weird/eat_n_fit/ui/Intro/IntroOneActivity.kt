@@ -19,7 +19,7 @@ class IntroOneActivity : AppCompatActivity() {
 
         preferences = Preferences(this)
 
-        if (preferences.getValues("Intro").equals("1")) {
+        if (preferences.getValues("Intro").equals("2")) {
             finishAffinity()
 
             val intent = Intent(this@IntroOneActivity,
@@ -39,7 +39,7 @@ class IntroOneActivity : AppCompatActivity() {
         }
 
         skip_one.setOnClickListener {
-            preferences.setValues("Intro", "1")
+            preferences.setValues("Intro", "2")
             finishAffinity()
 
             val intent = Intent(this@IntroOneActivity,

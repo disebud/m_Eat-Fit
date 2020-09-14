@@ -14,6 +14,9 @@ import com.example.enigma_bank.ui.user.UserViewModel
 import com.squareup.picasso.Picasso
 import com.weird.eat_n_fit.R
 import com.weird.eat_n_fit.ui.sign.signIn.screen.SignInActivity
+import com.weird.eat_n_fit.ui.sign.signUp.SignUpActivity
+import com.weird.eat_n_fit.ui.utils.Preferences
+import kotlinx.android.synthetic.main.activity_sign_in.*
 import kotlinx.android.synthetic.main.fragment_dashboard.*
 import kotlinx.android.synthetic.main.fragment_dashboard.iv_profile
 import kotlinx.android.synthetic.main.fragment_dashboard.tv_saldo
@@ -25,6 +28,7 @@ class SettingsFragment : Fragment() {
     private var sharedPreferences: SharedPreferences? = null
     private val userViewModel by activityViewModels<UserViewModel>()
     private var user: User = User()
+    lateinit var preferences: Preferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -73,6 +77,15 @@ class SettingsFragment : Fragment() {
                 context,
                 SignInActivity::class.java)
             startActivity(intent)
+        }
+
+        tv_edit_profile2.setOnClickListener {
+            val intent = Intent(
+                context,
+                SignUpActivity::class.java
+            )
+            startActivity(intent)
+            preferences.setValues("status", "1")
         }
 
     }
