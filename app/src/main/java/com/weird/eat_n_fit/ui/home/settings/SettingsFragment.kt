@@ -14,14 +14,16 @@ import com.example.enigma_bank.ui.user.UserViewModel
 import com.squareup.picasso.Picasso
 import com.weird.eat_n_fit.R
 import com.weird.eat_n_fit.ui.sign.signIn.screen.SignInActivity
+import com.weird.eat_n_fit.ui.utils.Preferences
 import kotlinx.android.synthetic.main.fragment_dashboard.*
 import kotlinx.android.synthetic.main.fragment_dashboard.iv_profile
 import kotlinx.android.synthetic.main.fragment_dashboard.tv_saldo
 import kotlinx.android.synthetic.main.fragment_settings.*
 
 
-class SettingsFragment : Fragment() {
+class SettingsFragment : Fragment(), View.OnClickListener {
 
+    lateinit var preferences: Preferences
     private var sharedPreferences: SharedPreferences? = null
     private val userViewModel by activityViewModels<UserViewModel>()
     private var user: User = User()
@@ -32,7 +34,6 @@ class SettingsFragment : Fragment() {
             getString(R.string.shared_preferences_name),
             Context.MODE_PRIVATE
         )
-
     }
 
     override fun onCreateView(
@@ -45,6 +46,9 @@ class SettingsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        preferences = Preferences(view.context)
+
+        tv_sign_out.setOnClickListener(this)
 
         val id = sharedPreferences?.getString(getString(R.string.user_id), "")
         val token = sharedPreferences?.getString(getString(R.string.auth_token), "")
@@ -75,6 +79,22 @@ class SettingsFragment : Fragment() {
             startActivity(intent)
         }
 
+    }
+
+    override fun onClick(v: View?) {
+        when (v) {
+            tv_sign_out -> {
+                preferences.setValues("status", "0")
+                with(sharedPreferences?.edit()) {
+                    this?.remove(getString(R.string.user_id))
+                    this?.remove(getString(R.string.auth_token))
+                    this?.apply()
+                    val intent = Intent(activity, SignInActivity::class.java)
+                    activity?.finish()
+                    startActivity(intent)
+                }
+            }
+        }
     }
 
 

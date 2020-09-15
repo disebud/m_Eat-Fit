@@ -16,8 +16,18 @@ class Preferences(val context: Context) {
         editor.apply()
     }
 
+    fun removeValues(key: String) {
+        val editor: SharedPreferences.Editor = sharedPref.edit()
+        editor.remove(key)
+        editor.apply()
+    }
+
     fun getValues(key: String): String? {
         return sharedPref.getString(key, "")
+    }
+
+    fun contains(key: String): Boolean {
+        return sharedPref.contains(key)
     }
 
 }
