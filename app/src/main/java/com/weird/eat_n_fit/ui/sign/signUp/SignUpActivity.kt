@@ -64,7 +64,6 @@ class SignUpActivity : AppCompatActivity() {
                 }else {
                     saveUser(Fname, Lname, emailUser, passwordUser,genderUser)
                 }
-
             }
         }
     }

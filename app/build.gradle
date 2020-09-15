@@ -91,7 +91,7 @@ dependencies {
     implementation 'com.google.zxing:core:3.4.0'
 
     //firebase
-    implementation 'com.google.firebase:firebase-auth:19.3.2'
+    implementation 'com.google.firebase:firebase-auth:19.4.0'
     implementation 'com.google.android.gms:play-services-auth:18.1.0'
 
     testImplementation 'junit:junit:4.12'
