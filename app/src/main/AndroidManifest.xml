@@ -18,15 +18,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.NoActionBar">
         <activity android:name=".ui.qrcode.GenerateqrActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".ui.qrcode.ScanqrActivity">
 
         </activity>
+        <activity android:name=".ui.qrcode.ScanqrActivity"/>
+
         <activity android:name=".ui.wallet.SuccessTopUpActivity" />
         <activity android:name=".ui.wallet.TopUpActivity" />
         <activity android:name=".ui.wallet.WalletActivity" />
@@ -36,13 +31,20 @@
         <activity android:name=".ui.order.NextOrderActivity" />
         <activity android:name=".ui.order.DetailMenuActivity" />
         <activity android:name=".ui.order.DetailPaketActivity" />
-        <activity android:name=".ui.home.HomeActivity" /> <!-- <activity android:name=".ui.sign.register.RegisterPhotoActivity" /> -->
-        <!-- <activity android:name=".ui.sign.register.RegisterActivity" /> -->
+        <activity android:name=".ui.home.HomeActivity" />
+<!--         <activity android:name=".ui.sign.register.RegisterPhotoActivity" /> -->
+         <activity android:name=".ui.sign.signUp.SignUpActivity" />
         <activity android:name=".ui.sign.signIn.screen.SignInActivity" />
         <activity android:name=".ui.Intro.IntroThreeActivity" />
         <activity android:name=".ui.Intro.IntroTwoActivity" />
         <activity android:name=".ui.Intro.IntroOneActivity" />
-        <activity android:name=".ui.Intro.SplashScreenActivity" />
+        <activity android:name=".ui.Intro.SplashScreenActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

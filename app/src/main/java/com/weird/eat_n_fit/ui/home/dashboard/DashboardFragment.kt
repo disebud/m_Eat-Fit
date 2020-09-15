@@ -14,6 +14,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import com.example.enigma_bank.ui.user.User
 import com.example.enigma_bank.ui.user.UserViewModel
+import com.google.firebase.auth.FirebaseAuth
 import com.squareup.picasso.Picasso
 import com.weird.eat_n_fit.R
 import com.weird.eat_n_fit.ui.sign.signIn.screen.SignInActivity
@@ -21,7 +22,7 @@ import kotlinx.android.synthetic.main.fragment_dashboard.*
 
 
 class DashboardFragment : Fragment() {
-
+    private lateinit var mAuth: FirebaseAuth
     private var sharedPreferences: SharedPreferences? = null
     private val userViewModel by activityViewModels<UserViewModel>()
     private var user: User = User()

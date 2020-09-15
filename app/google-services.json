@@ -1,34 +1,42 @@
 {
   "project_info": {
-    "project_number": "721322119598",
-    "firebase_url": "https://eatnfit-project.firebaseio.com",
-    "project_id": "eatnfit-project",
-    "storage_bucket": "eatnfit-project.appspot.com"
+    "project_number": "934630018042",
+    "firebase_url": "https://eat-fit-d00ff.firebaseio.com",
+    "project_id": "eat-fit-d00ff",
+    "storage_bucket": "eat-fit-d00ff.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:721322119598:android:1cc7959e4f1f4d9db7b83f",
+        "mobilesdk_app_id": "1:934630018042:android:2f5bf8be85b61995e17243",
         "android_client_info": {
           "package_name": "com.weird.eat_n_fit"
         }
       },
       "oauth_client": [
         {
-          "client_id": "721322119598-jlut97s3n8okhilg3hm68ou63sksisdp.apps.googleusercontent.com",
+          "client_id": "934630018042-9q5ijue530l5772eb3h0t17t7ivol4st.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.weird.eat_n_fit",
+            "certificate_hash": "5aad2497052f69f0a99093342a5b742b3ed2f08d"
+          }
+        },
+        {
+          "client_id": "934630018042-v4k7ktth7cnad7mub3k81osamjolas62.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAwtEBKmcVIftayFYWDUuGW6Z_I_EwKYYk"
+          "current_key": "AIzaSyDLHV6kI7L6t_cGelp6efBfkLLusxjVo7k"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "721322119598-jlut97s3n8okhilg3hm68ou63sksisdp.apps.googleusercontent.com",
+              "client_id": "934630018042-v4k7ktth7cnad7mub3k81osamjolas62.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
