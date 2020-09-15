@@ -20,10 +20,12 @@ class SignUpActivity : AppCompatActivity() {
 
         preferences = Preferences(this)
 
-        mAuth = FirebaseAuth.getInstance()
-        val currentUser= mAuth.currentUser
-        val nameDisplaytampung= currentUser?.displayName
-        val emailTampung=currentUser?.email
+//        mAuth = FirebaseAuth.getInstance()
+//        val currentUser= mAuth.currentUser
+//        val nameDisplaytampung= currentUser?.displayName
+//        val emailTampung=currentUser?.email
+        val nameDisplaytampung = intent.getStringExtra("nameDisplay")
+        val emailTampung = intent.getStringExtra("email")
         et_f_name_register.setText(nameDisplaytampung)
         email_register.setText(emailTampung)
 

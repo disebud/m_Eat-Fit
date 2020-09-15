@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -26,6 +27,7 @@ import com.weird.eat_n_fit.ui.sign.signIn.UserSignInViewModel
 import com.weird.eat_n_fit.ui.sign.signUp.SignUpActivity
 import com.weird.eat_n_fit.ui.utils.Preferences
 import kotlinx.android.synthetic.main.activity_sign_in.*
+import kotlinx.android.synthetic.main.activity_sign_up.*
 import kotlinx.android.synthetic.main.fragment_settings.*
 
 
@@ -40,7 +42,6 @@ class SignInActivity : AppCompatActivity() {
 
     lateinit var preferences: Preferences
 
-    private lateinit var auth: FirebaseAuth
 
     private lateinit var mAuth: FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
@@ -49,6 +50,7 @@ class SignInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
         supportActionBar?.hide()
+        mAuth= FirebaseAuth.getInstance()
 
 
         // Configure Google Sign In
@@ -195,9 +197,15 @@ class SignInActivity : AppCompatActivity() {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d("TAG", "signInWithCredential:success")
                     val user = mAuth.currentUser
+                    val nameDisplay= user?.displayName
+                    val emailTampung=user?.email
+
                     val intent = Intent(this, SignUpActivity::class.java)
+                    intent.putExtra("nameDisplay",nameDisplay)
+                    intent.putExtra("email",emailTampung)
                     startActivity(intent)
                     finish()
+
 
                 } else {
                     // If sign in fails, display a message to the user.

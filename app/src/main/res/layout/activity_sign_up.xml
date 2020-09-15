@@ -8,6 +8,7 @@
     tools:context=".ui.sign.signUp.SignUpActivity">
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -22,6 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <LinearLayout
                 android:id="@+id/linear_f_name_register"
                 android:layout_width="match_parent"
@@ -111,6 +113,7 @@
 
 
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/linear_password_register"
                 android:layout_width="match_parent"
@@ -189,17 +192,19 @@
         android:id="@+id/next_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="@color/orangeSecond"
-        android:textColor="@color/colorWhite"
-        android:text="NEXT"
         android:fontFamily="@font/poppins_regular"
-        android:textStyle="bold"
+        android:text="NEXT"
+        android:textColor="@color/colorWhite"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
     <ImageView
         android:id="@+id/imageView2"

@@ -16,8 +16,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
         var handler = Handler()
         handler.postDelayed({
-            val intent = Intent(this@SplashScreenActivity,
-                IntroOneActivity::class.java)
+            val intent = Intent(this@SplashScreenActivity,IntroOneActivity::class.java)
             startActivity(intent)
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             finish()

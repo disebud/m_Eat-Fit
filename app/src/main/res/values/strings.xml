@@ -6,7 +6,7 @@
     <string name="top_up_balance">TOP UP BALANCE</string>
     <string name="idr_500_000">IDR. 500.000</string>
     <string name="my_wallet">MY WALLET</string>
-    <string name="shared_preferences_name">com.example.enigma_bank</string>
+    <string name="shared_preferences_name">com.weird.eat_n_fit</string>
     <string name="auth_token">TOKEN</string>
     <string name="user_id">USER_ID</string>
     <string name="image_link">http://4c0c492e0018.ngrok.io/images/</string>

@@ -22,8 +22,7 @@ class IntroOneActivity : AppCompatActivity() {
         if (preferences.getValues("Intro").equals("1")) {
             finishAffinity()
 
-            val intent = Intent(this@IntroOneActivity,
-                SignInActivity::class.java)
+            val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             finish()
@@ -31,8 +30,8 @@ class IntroOneActivity : AppCompatActivity() {
         }
 
         next_one.setOnClickListener {
-            val intent = Intent(this@IntroOneActivity,
-                IntroTwoActivity::class.java)
+
+            val intent = Intent(this,IntroTwoActivity::class.java)
             startActivity(intent)
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             finish()
@@ -42,8 +41,7 @@ class IntroOneActivity : AppCompatActivity() {
             preferences.setValues("Intro", "1")
             finishAffinity()
 
-            val intent = Intent(this@IntroOneActivity,
-                SignInActivity::class.java)
+            val intent = Intent(this,SignInActivity::class.java)
             startActivity(intent)
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             finish()
