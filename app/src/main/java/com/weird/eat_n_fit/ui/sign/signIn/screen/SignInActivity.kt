@@ -35,6 +35,8 @@ class SignInActivity : AppCompatActivity() {
     companion object{
         private const val RC_SIGN_IN= 666
     }
+
+
     private val signInViewModel by viewModels<UserSignInViewModel>()
     private var userData: SigninResponse = SigninResponse()
 //    private lateinit var navController: NavController

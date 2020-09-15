@@ -18,6 +18,7 @@ class SignInRepository(private val UserSignInAPI: UserSignInAPI) {
         UserSignInAPI.login(UserSignInData).enqueue(object : Callback<SigninResponse> {
             override fun onResponse(call: Call<SigninResponse>, response: Response<SigninResponse>) {
                 userData.value = response.body()
+                println(response.body())
             }
 
             override fun onFailure(call: Call<SigninResponse>, t: Throwable) {

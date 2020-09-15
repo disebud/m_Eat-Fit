@@ -14,6 +14,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_eat_n_fit"
         android:label="@string/app_name"
+
         android:requestLegacyExternalStorage="true"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.NoActionBar">
