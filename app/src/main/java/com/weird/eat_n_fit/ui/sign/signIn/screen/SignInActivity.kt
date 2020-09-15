@@ -1,17 +1,15 @@
 package com.weird.eat_n_fit.ui.sign.signIn.screen
 
-import android.content.ContentProviderClient
+//import com.weird.eat_n_fit.ui.sign.signUp.SignUpActivity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.os.Handler
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
@@ -20,24 +18,24 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.weird.eat_n_fit.R
 import com.weird.eat_n_fit.ui.home.HomeActivity
-//import com.weird.eat_n_fit.ui.sign.signUp.SignUpActivity
 import com.weird.eat_n_fit.ui.sign.signIn.SigninResponse
 import com.weird.eat_n_fit.ui.sign.signIn.UserSignInModel
 import com.weird.eat_n_fit.ui.sign.signIn.UserSignInViewModel
 import com.weird.eat_n_fit.ui.sign.signUp.SignUpActivity
 import com.weird.eat_n_fit.ui.utils.Preferences
 import kotlinx.android.synthetic.main.activity_sign_in.*
-import kotlinx.android.synthetic.main.activity_sign_up.*
 import kotlinx.android.synthetic.main.fragment_settings.*
 
 
 class SignInActivity : AppCompatActivity() {
-    companion object{
-        private const val RC_SIGN_IN= 666
+    companion object {
+        private const val RC_SIGN_IN = 666
     }
+
     private val signInViewModel by viewModels<UserSignInViewModel>()
     private var userData: SigninResponse = SigninResponse()
-//    private lateinit var navController: NavController
+
+    //    private lateinit var navController: NavController
     private var sharedPreferences: SharedPreferences? = null
 
     lateinit var preferences: Preferences
@@ -50,7 +48,7 @@ class SignInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
         supportActionBar?.hide()
-        mAuth= FirebaseAuth.getInstance()
+        mAuth = FirebaseAuth.getInstance()
 
 
         // Configure Google Sign In
@@ -60,10 +58,10 @@ class SignInActivity : AppCompatActivity() {
             .build()
 
 
-        googleSignInClient = GoogleSignIn.getClient(this , gso)
+        googleSignInClient = GoogleSignIn.getClient(this, gso)
 
         //Autifikasi ke firebase
-        mAuth= FirebaseAuth.getInstance()
+        mAuth = FirebaseAuth.getInstance()
 
 
         preferences = Preferences(this)
@@ -71,8 +69,10 @@ class SignInActivity : AppCompatActivity() {
         if (preferences.getValues("status").equals("1")) {
             finishAffinity()
 
-            val intent = Intent(this@SignInActivity,
-                HomeActivity::class.java)
+            val intent = Intent(
+                this@SignInActivity,
+                HomeActivity::class.java
+            )
             startActivity(intent)
         }
 
@@ -115,29 +115,30 @@ class SignInActivity : AppCompatActivity() {
                 signInViewModel.userData.observe(this, {
                     if (it != null) {
 //                        if (it.user.user_level == "2") {
-                            with(sharedPreferences?.edit()) {
-                                this?.putString(
-                                    getString(R.string.auth_token),
-                                    it.token
-                                )
-                                this?.putString(
-                                    getString(R.string.user_id),
-                                    it.user.user_id
-                                )
-                                Toast.makeText(
-                                    this@SignInActivity,
-                                    "Welcome ${it.user.user_f_name}!",
-                                    Toast.LENGTH_SHORT
-                                ).show()
-                                val intent = Intent(
-                                    this@SignInActivity,
-                                    HomeActivity::class.java)
-                                startActivity(intent)
-                                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                                finish()
-                                this?.apply()
-                                preferences.setValues("status", "1")
-                            }
+                        with(sharedPreferences?.edit()) {
+                            this?.putString(
+                                getString(R.string.auth_token),
+                                it.token
+                            )
+                            this?.putString(
+                                getString(R.string.user_id),
+                                it.user.user_id
+                            )
+                            Toast.makeText(
+                                this@SignInActivity,
+                                "Welcome ${it.user.user_f_name}!",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            val intent = Intent(
+                                this@SignInActivity,
+                                HomeActivity::class.java
+                            )
+                            startActivity(intent)
+                            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                            finish()
+                            this?.apply()
+                            preferences.setValues("status", "1")
+                        }
 //                        }
                     } else {
                         Toast.makeText(
@@ -152,15 +153,15 @@ class SignInActivity : AppCompatActivity() {
         }
 
         btn_sign_up.setOnClickListener {
-//            val intent = Intent(
-//                this@SignInActivity,
-//                SignUpActivity::class.java
-//            )
-//            startActivity(intent)
-//            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-//            finish()
+            val intent = Intent(
+                this@SignInActivity,
+                SignUpActivity::class.java
+            )
+            startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            finish()
         }
-        iv_google.setOnClickListener{
+        iv_google.setOnClickListener {
             signIn()
         }
     }
@@ -197,12 +198,12 @@ class SignInActivity : AppCompatActivity() {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d("TAG", "signInWithCredential:success")
                     val user = mAuth.currentUser
-                    val nameDisplay= user?.displayName
-                    val emailTampung=user?.email
+                    val nameDisplay = user?.displayName
+                    val emailTampung = user?.email
 
                     val intent = Intent(this, SignUpActivity::class.java)
-                    intent.putExtra("nameDisplay",nameDisplay)
-                    intent.putExtra("email",emailTampung)
+                    intent.putExtra("nameDisplay", nameDisplay)
+                    intent.putExtra("email", emailTampung)
                     startActivity(intent)
                     finish()
 

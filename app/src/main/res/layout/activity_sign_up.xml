@@ -173,7 +173,6 @@
                     android:layout_height="match_parent"
                     android:backgroundTint="@color/orangeThird"
                     android:backgroundTintMode="screen"
-                    android:digits="01"
                     android:fontFamily="@font/poppins_regular"
                     android:hint="Gender (L/P)"
                     android:inputType="textCapSentences|text"
