@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.app.ActivityCompat
 import androidx.fragment.app.activityViewModels
 import com.example.enigma_bank.ui.user.User
 import com.example.enigma_bank.ui.user.UserViewModel
@@ -69,6 +70,7 @@ class SettingsFragment : Fragment(), View.OnClickListener {
                 context,
                 SignInActivity::class.java)
             startActivity(intent)
+            activity?.finish()
         }
 
         if (!sharedPreferences!!.contains(getString(R.string.auth_token))) {
