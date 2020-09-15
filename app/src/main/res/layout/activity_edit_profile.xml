@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/edit_profile"
+    tools:context=".ui.home.settings.EditProfileActivity">
+
+
+<LinearLayout
+    android:id="@+id/linear_f_name_edit_profile"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_marginStart="50dp"
+    android:layout_marginTop="270dp"
+    android:layout_marginEnd="50dp"
+    android:orientation="horizontal"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <ImageButton
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/orangeFourth"
+        android:tint="@color/colorWhite"
+        android:src="@drawable/ic_baseline_person_24" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/et_f_name_edit_profile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/orangeThird"
+        android:backgroundTintMode="screen"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorGray"
+        android:hint="First Name"
+        android:fontFamily="@font/poppins_regular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</LinearLayout>
+
+<LinearLayout
+    android:id="@+id/linear_l_name_edit_profile"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_marginStart="50dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="50dp"
+    android:orientation="horizontal"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/linear_f_name_edit_profile">
+
+    <ImageButton
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:backgroundTint="#FFC107"
+        android:src="@drawable/ic_baseline_person_24"
+        android:tint="#FFFFFF" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/et_l_name_edit_profile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/orangeThird"
+        android:backgroundTintMode="screen"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorGray"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="Last Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</LinearLayout>
+
+<LinearLayout
+    android:id="@+id/linear_email_edit_profile"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_marginStart="50dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="50dp"
+    android:orientation="horizontal"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/linear_l_name_edit_profile">
+
+    <ImageButton
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:backgroundTint="#FFC107"
+        android:src="@drawable/ic_baseline_alternate_email_24"
+        android:tint="#FFFFFF" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/email_edit_profile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/orangeThird"
+        android:backgroundTintMode="screen"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorGray"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="E-MAIL"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</LinearLayout>
+
+<LinearLayout
+    android:id="@+id/linear_password_edit_profile"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_marginStart="50dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="50dp"
+    android:orientation="horizontal"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/linear_email_edit_profile">
+
+    <ImageButton
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/orangeFourth"
+        android:tint="@color/colorWhite"
+        android:src="@drawable/ic_baseline_lock_24" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:boxStrokeColor="@color/orangeThird"
+        android:textColorHint="@color/colorGray"
+        app:hintTextColor="@color/orangeThird"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password_edit_profile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTintMode="screen"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorGray"
+            app:hintTextColor="@color/orangeThird"
+            android:hint="PASSSWORD"
+            android:fontFamily="@font/poppins_regular"
+            android:inputType="textPassword"
+            app:passwordToggleEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+</LinearLayout>
+
+<LinearLayout
+    android:id="@+id/linear_gender_edit_profile"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_marginStart="50dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="50dp"
+    android:orientation="horizontal"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/linear_password_edit_profile">
+
+    <ImageButton
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:backgroundTint="#FFC107"
+        android:src="@drawable/ic_gender"
+        android:tint="#FFFFFF" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/et_gender_edit_profile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/orangeThird"
+        android:backgroundTintMode="screen"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorGray"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="Gender (L/P)"
+        android:digits="01"
+        android:inputType="textCapSentences|text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</LinearLayout>
+
+<com.google.android.material.button.MaterialButton
+    android:id="@+id/save_edit_profile"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
+    android:backgroundTint="@color/orangeSecond"
+    android:textColor="@color/colorWhite"
+    android:text="SAVE"
+    android:fontFamily="@font/poppins_regular"
+    android:textStyle="bold"
+    android:textSize="18sp"
+    app:cornerRadius="20dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent" />
+
+<ImageView
+    android:id="@+id/back_edit_profile"
+    android:layout_width="52dp"
+    android:layout_height="49dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:src="@drawable/back"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:srcCompat="@drawable/back" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

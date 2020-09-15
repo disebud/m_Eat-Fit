@@ -14,12 +14,8 @@ import com.example.enigma_bank.ui.user.UserViewModel
 import com.squareup.picasso.Picasso
 import com.weird.eat_n_fit.R
 import com.weird.eat_n_fit.ui.sign.signIn.screen.SignInActivity
-import com.weird.eat_n_fit.ui.sign.signUp.SignUpActivity
 import com.weird.eat_n_fit.ui.utils.Preferences
-import kotlinx.android.synthetic.main.activity_sign_in.*
-import kotlinx.android.synthetic.main.fragment_dashboard.*
-import kotlinx.android.synthetic.main.fragment_dashboard.iv_profile
-import kotlinx.android.synthetic.main.fragment_dashboard.tv_saldo
+import com.weird.eat_n_fit.ui.wallet.WalletActivity
 import kotlinx.android.synthetic.main.fragment_settings.*
 
 
@@ -79,14 +75,27 @@ class SettingsFragment : Fragment() {
             startActivity(intent)
         }
 
+        tv_my_wallet.setOnClickListener {
+            startActivity(Intent(activity, WalletActivity::class.java))
+        }
+
+        tv_edit_profile.setOnClickListener {
+            startActivity(Intent(activity, EditProfileActivity::class.java))
+        }
+
+
+
 //        tv_edit_profile2.setOnClickListener {
+//            preferences.setValues("status", "1")
 //            val intent = Intent(
-//                context,
-//                SignUpActivity::class.java
+//                activity,
+//                SignInActivity::class.java
 //            )
 //            startActivity(intent)
-//            preferences.setValues("status", "1")
+//
 //        }
+
+
 
     }
 
