@@ -1,9 +1,8 @@
 package com.weird.eat_n_fit.ui.sign.signUp
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.weird.eat_n_fit.R
 import com.weird.eat_n_fit.ui.sign.signIn.User
@@ -13,6 +12,7 @@ import kotlinx.android.synthetic.main.activity_sign_up.*
 class SignUpActivity : AppCompatActivity() {
     private lateinit var mAuth: FirebaseAuth
     private lateinit var preferences: Preferences
+    private val userSignUpViewModel by viewModels<UserSignUpViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,10 +77,29 @@ class SignUpActivity : AppCompatActivity() {
         user.user_password = passwordUser
         user.user_gender = genderUser
 
-//        if (emailUser != null) {
-//            checkingUsername(emailUser, user)
-//
-//        }
+        userSignUpViewModel.checkEmail(user)
+        userSignUpViewModel.isDuplicate.observe(this, { isDuplicate ->
+            if (isDuplicate) {
+                userSignUpViewModel.signUp(user)
+                userSignUpViewModel.userData.observe(this, {
+                    if (it != null) {
+                        preferences.setValues("Fnama", it.user_f_name)
+                        preferences.setValues("Lname", it.user_l_name)
+                        preferences.setValues("Uemail", it.user_email)
+                        preferences.setValues("Upassword", it.user_password)
+                        preferences.setValues("Ugender", it.user_gender)
+                        preferences.setValues("Ubalance", "0")
+                        preferences.setValues("Ulevel", "2")
+                        preferences.setValues("Ustatus", "1")
+                        preferences.setValues("status", "1")
+                    }
+                })
+                // go to sign up photo activity
+
+            } else {
+                // username has been used
+            }
+        })
 
     }
 //
