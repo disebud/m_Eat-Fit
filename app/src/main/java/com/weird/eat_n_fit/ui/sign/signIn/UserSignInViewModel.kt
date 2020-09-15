@@ -16,6 +16,7 @@ class UserSignInViewModel : ViewModel() {
     val userData: LiveData<SigninResponse> = signInRepo.userData
 
     fun signIn(loginData: UserSignInModel) {
+        println(loginData)
         signInRepo.signIn(loginData)
     }
 

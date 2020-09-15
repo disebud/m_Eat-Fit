@@ -32,6 +32,7 @@ class SignInActivity : AppCompatActivity() {
         private const val RC_SIGN_IN = 666
     }
 
+
     private val signInViewModel by viewModels<UserSignInViewModel>()
     private var userData: SigninResponse = SigninResponse()
 
