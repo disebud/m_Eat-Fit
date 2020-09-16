@@ -17,6 +17,7 @@ import com.squareup.picasso.Picasso
 import com.weird.eat_n_fit.R
 import com.weird.eat_n_fit.ui.sign.signIn.screen.SignInActivity
 import com.weird.eat_n_fit.ui.utils.Preferences
+import com.weird.eat_n_fit.ui.wallet.WalletActivity
 import kotlinx.android.synthetic.main.fragment_settings.*
 
 
@@ -81,6 +82,14 @@ class SettingsFragment : Fragment(), View.OnClickListener {
                 context,
                 SignInActivity::class.java)
             startActivity(intent)
+        }
+
+        tv_my_wallet.setOnClickListener {
+            startActivity(Intent(activity, WalletActivity::class.java))
+        }
+
+        tv_edit_profile.setOnClickListener {
+            startActivity(Intent(activity, EditProfileActivity::class.java))
         }
 
     }

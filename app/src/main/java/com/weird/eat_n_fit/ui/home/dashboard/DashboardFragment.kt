@@ -104,8 +104,7 @@ class DashboardFragment : Fragment() {
             userViewModel.getUserByID(token!!, id)
             userViewModel.user.observe(viewLifecycleOwner, {
                 Picasso.get().load("${getString(R.string.image_link)}$id.jpg").into(iv_profile)
-                val bal = "Rp. ${it.user_balance}"
-                tv_saldo.text = bal
+                currency(it.user_balance!!.toDouble(), tv_saldo)
                 val name = "${it.user_f_name} ${it.user_l_name}"
                 tv_nama.text = name
                 user = it
@@ -134,7 +133,7 @@ class DashboardFragment : Fragment() {
 
     }
 
-    fun currecy(harga:Double, textView: TextView) {
+    fun currency(harga:Double, textView: TextView) {
         val localeID = Locale("in", "ID")
         val formatRupiah = NumberFormat.getCurrencyInstance(localeID)
         textView.setText(formatRupiah.format(harga as Double))
