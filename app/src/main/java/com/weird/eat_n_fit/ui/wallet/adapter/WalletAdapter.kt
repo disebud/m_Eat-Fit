@@ -49,11 +49,11 @@ class WalletAdapter(private var data: List<Wallet>,
             val localID = Locale("in", "ID")
             val formatRupiah = NumberFormat.getCurrencyInstance(localID)
 
-            if (data.status.equals("0")){
-                tvMoney.text = "- "+formatRupiah.format(data.money)
-            } else {
+            if (data.status.equals("1")){
                 tvMoney.text = "+ "+formatRupiah.format(data.money)
                 tvMoney.setTextColor(Color.GREEN)
+            } else {
+                tvMoney.text = "- "+formatRupiah.format(data.money)
             }
 
 

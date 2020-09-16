@@ -8,7 +8,7 @@ class RetrofitBuilder {
 
     companion object {
 //        private const val BASE_URL = "http://34.101.198.49:8082/"
-        private const val BASE_URL = "http://4c0c492e0018.ngrok.io"
+        private const val BASE_URL = "http://b4e5342d462b.ngrok.io/"
 
         fun createRetrofit(): Retrofit {
             return Retrofit.Builder()

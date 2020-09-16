@@ -9,6 +9,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.enigma_bank.ui.user.User
 import com.example.enigma_bank.ui.user.UserViewModel
 import com.squareup.picasso.Picasso
@@ -57,7 +59,11 @@ class SettingsFragment : Fragment() {
                 val name = "${it.user_f_name} ${it.user_l_name}"
                 tv_nama_profile.text = name
                 user = it
-                Picasso.get().load("${getString(R.string.image_link)}$id.jpg").into(iv_profile_settings)
+//                Picasso.get().load("${getString(R.string.image_link)}$id.jpg").into(iv_profile_settings)
+                Glide.with(this)
+                    .load("${getString(R.string.image_link)}$id.jpg")
+                    .apply(RequestOptions.circleCropTransform())
+                    .into(iv_profile_settings)
             })
         } else {
 //            view.findNavController().navigate(R.id.action_to_signInActivity)
@@ -74,6 +80,8 @@ class SettingsFragment : Fragment() {
                 SignInActivity::class.java)
             startActivity(intent)
         }
+
+
 
         tv_my_wallet.setOnClickListener {
             startActivity(Intent(activity, WalletActivity::class.java))
@@ -94,10 +102,9 @@ class SettingsFragment : Fragment() {
 //            startActivity(intent)
 //
 //        }
-
-
-
     }
 
 
 }
+
+
