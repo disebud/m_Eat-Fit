@@ -1,7 +1,6 @@
 package com.weird.eat_n_fit.ui.home.order
 
 import androidx.lifecycle.MutableLiveData
-import com.example.enigma_bank.ui.user.User
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

@@ -1,6 +1,5 @@
 package com.weird.eat_n_fit.ui.sign.signIn.screen
 
-//import com.weird.eat_n_fit.ui.sign.signUp.SignUpActivity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -66,8 +65,8 @@ class SignInActivity : AppCompatActivity() {
 
 
         preferences = Preferences(this)
-        preferences.setValues("Intro", "1")
-        if (preferences.getValues("status").equals("1")) {
+        preferences.setValues("Intro", "2")
+        if (preferences.getValues("status").equals("0")) {
             finishAffinity()
 
             val intent = Intent(
@@ -75,6 +74,8 @@ class SignInActivity : AppCompatActivity() {
                 HomeActivity::class.java
             )
             startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            finish()
         }
 
         sharedPreferences = getSharedPreferences(
@@ -116,6 +117,7 @@ class SignInActivity : AppCompatActivity() {
                 signInViewModel.userData.observe(this, {
                     if (it != null) {
 //                        if (it.user.user_level == "2") {
+
                         with(sharedPreferences?.edit()) {
                             this?.putString(
                                 getString(R.string.auth_token),
@@ -140,7 +142,6 @@ class SignInActivity : AppCompatActivity() {
                             this?.apply()
                             preferences.setValues("status", "1")
                         }
-//                        }
                     } else {
                         Toast.makeText(
                             this@SignInActivity,

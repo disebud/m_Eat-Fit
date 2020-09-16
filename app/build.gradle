@@ -34,6 +34,13 @@ android {
         }
     }
 
+    allprojects {
+        repositories {
+            jcenter()
+            maven { url "https://jitpack.io" }  //Make sure to add this in your project for uCrop
+        }
+    }
+
 
 }
 
@@ -95,6 +102,15 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:18.1.0'
 
     implementation("io.coil-kt:coil:0.11.0")
+
+    // carousel
+    implementation 'com.synnapps:carouselview:0.1.5'
+
+    // Glide
+    implementation("com.github.bumptech.glide:glide:4.9.0") {
+        exclude group: "com.android.support"
+    }
+
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

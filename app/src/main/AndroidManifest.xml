@@ -3,13 +3,17 @@
     package="com.weird.eat_n_fit">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <!-- <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> -->
-    <!-- <uses-permission android:name="android.permission.CAMERA" /> -->
-    <uses-permission-sdk-23 android:name="android.permission.INTERNET" />
-
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-permission-sdk-23 android:name="android.permission.INTERNET" />
+    <uses-permission-sdk-23 android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission-sdk-23 android:name="android.permission.CAMERA" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
 
     <application
         android:allowBackup="true"
@@ -19,11 +23,10 @@
         android:requestLegacyExternalStorage="true"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.NoActionBar">
-        <activity android:name=".ui.qrcode.GenerateqrActivity">
 
-        </activity>
+        <activity android:name=".ui.qrcode.GenerateqrActivity"/>
         <activity android:name=".ui.qrcode.ScanqrActivity"/>
-
+        <activity android:name=".ui.home.settings.EditProfileActivity"/>
         <activity android:name=".ui.wallet.SuccessTopUpActivity" />
         <activity android:name=".ui.wallet.TopUpActivity" />
         <activity android:name=".ui.wallet.WalletActivity" />
@@ -34,13 +37,13 @@
         <activity android:name=".ui.order.DetailMenuActivity" />
         <activity android:name=".ui.order.DetailPaketActivity" />
         <activity android:name=".ui.home.HomeActivity" />
-<!--         <activity android:name=".ui.sign.register.RegisterPhotoActivity" /> -->
-         <activity android:name=".ui.sign.signUp.SignUpActivity" />
+        <activity android:name=".ui.sign.signUp.SignUpPhotoActivity" />
+        <activity android:name=".ui.sign.signUp.SignUpActivity" />
         <activity android:name=".ui.sign.signIn.screen.SignInActivity" />
         <activity android:name=".ui.Intro.IntroThreeActivity" />
         <activity android:name=".ui.Intro.IntroTwoActivity" />
         <activity android:name=".ui.Intro.IntroOneActivity" />
-        <activity android:name=".ui.Intro.SplashScreenActivity" >
+        <activity android:name=".ui.Intro.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

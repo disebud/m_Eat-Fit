@@ -1,45 +1,19 @@
-//package com.weird.eat_n_fit.ui.sign.signUp
-//
-//import android.app.Activity
-//import android.app.ProgressDialog
-//import android.content.Intent
-//import android.net.Uri
-//import androidx.appcompat.app.AppCompatActivity
-//import android.os.Bundle
-//import android.view.View
-//import android.widget.Toast
-//import com.github.dhaval2404.imagepicker.ImagePicker
-//import com.karumi.dexter.PermissionToken
-//import com.karumi.dexter.listener.PermissionDeniedResponse
-//import com.karumi.dexter.listener.PermissionGrantedResponse
-//import com.karumi.dexter.listener.single.PermissionListener
-//import com.weird.eat_n_fit.R
-//import com.weird.eat_n_fit.ui.home.HomeActivity
-//import com.weird.eat_n_fit.ui.sign.signIn.User
-//import com.weird.eat_n_fit.ui.sign.signIn.UserSignInModel
-//import com.weird.eat_n_fit.ui.utils.Preferences
-//import kotlinx.android.synthetic.main.activity_sign_up_photo.*
-//import java.util.*
-//
-//class SignUpPhotoActivity : AppCompatActivity(), PermissionListener {
-//
-//        val REQUEST_IMAGE_CAPTURE = 1
-//        var statusAdd:Boolean = false
-//        lateinit var filePath: Uri
-//
-//        lateinit var storage: FirebaseStorage
-//        lateinit var storageReference: StorageReference
-//
-//        lateinit var preferences: Preferences
-//
-//         var user : User? = null
-//
-//        private lateinit var mFirebaseDatabase: DatabaseReference
-//        private lateinit var mFirebaseInstance: FirebaseDatabase
-//
-//        override fun onCreate(savedInstanceState: Bundle?) {
-//            super.onCreate(savedInstanceState)
-//            setContentView(R.layout.activity_sign_up_photo)
+package com.weird.eat_n_fit.ui.sign.signUp
+
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.karumi.dexter.listener.single.PermissionListener
+import com.weird.eat_n_fit.R
+
+
+
+    class SignUpPhotoActivity : AppCompatActivity() {
+//    class SignUpPhotoActivity : AppCompatActivity(), PermissionListener {
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.activity_sign_up_photo)
+
 //
 //            preferences = Preferences(this)
 //            storage = FirebaseStorage.getInstance()
@@ -77,6 +51,7 @@
 //                val intent = Intent(this@SignUpPhotoActivity,
 //                    HomeActivity::class.java)
 //                startActivity(intent)
+
 //            }
 //
 //            save_next.setOnClickListener {
@@ -105,7 +80,8 @@
 //                }
 //
 //            }
-//        }
+        }
+
 //
 //        private fun saveToFirebase(url: String) {
 //
@@ -136,6 +112,7 @@
 //            })
 //
 //
+
 //        }
 //
 //        override fun onPermissionGranted(response: PermissionGrantedResponse?) {
@@ -209,3 +186,6 @@
 //            }
 //        }
 //    }
+
+    }
+
