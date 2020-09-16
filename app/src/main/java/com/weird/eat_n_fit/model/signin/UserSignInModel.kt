@@ -1,4 +1,4 @@
-package com.weird.eat_n_fit.ui.sign.signIn
+package com.weird.eat_n_fit.model.signin
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

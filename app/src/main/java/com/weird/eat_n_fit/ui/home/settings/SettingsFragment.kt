@@ -8,17 +8,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.app.ActivityCompat
 import androidx.fragment.app.activityViewModels
-import com.example.enigma_bank.ui.user.User
-import com.example.enigma_bank.ui.user.UserViewModel
+import com.weird.eat_n_fit.model.user.User
+import com.weird.eat_n_fit.model.user.UserViewModel
 import com.squareup.picasso.Picasso
 import com.weird.eat_n_fit.R
 import com.weird.eat_n_fit.ui.sign.signIn.screen.SignInActivity
 import com.weird.eat_n_fit.ui.utils.Preferences
-import kotlinx.android.synthetic.main.fragment_dashboard.*
-import kotlinx.android.synthetic.main.fragment_dashboard.iv_profile
-import kotlinx.android.synthetic.main.fragment_dashboard.tv_saldo
 import kotlinx.android.synthetic.main.fragment_settings.*
 
 

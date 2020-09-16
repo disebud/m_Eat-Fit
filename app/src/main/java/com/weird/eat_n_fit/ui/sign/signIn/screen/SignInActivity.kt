@@ -18,9 +18,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.weird.eat_n_fit.R
 import com.weird.eat_n_fit.ui.home.HomeActivity
-import com.weird.eat_n_fit.ui.sign.signIn.SigninResponse
-import com.weird.eat_n_fit.ui.sign.signIn.UserSignInModel
-import com.weird.eat_n_fit.ui.sign.signIn.UserSignInViewModel
+import com.weird.eat_n_fit.model.signin.SigninResponse
+import com.weird.eat_n_fit.model.signin.UserSignInModel
+import com.weird.eat_n_fit.model.signin.UserSignInViewModel
 import com.weird.eat_n_fit.ui.sign.signUp.SignUpActivity
 import com.weird.eat_n_fit.ui.utils.Preferences
 import kotlinx.android.synthetic.main.activity_sign_in.*

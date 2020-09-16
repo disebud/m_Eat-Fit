@@ -1,7 +1,8 @@
-package com.weird.eat_n_fit.ui.sign.signUp
+package com.weird.eat_n_fit.model.usersignup
 
 import androidx.lifecycle.MutableLiveData
-import com.weird.eat_n_fit.ui.sign.signIn.User
+import com.weird.eat_n_fit.model.errormessage.ErrorMessage
+import com.weird.eat_n_fit.model.signin.User
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

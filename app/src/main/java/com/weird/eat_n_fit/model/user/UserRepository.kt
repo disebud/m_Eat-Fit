@@ -1,10 +1,9 @@
-package com.example.enigma_bank.ui.user
+package com.weird.eat_n_fit.model.user
 
 import androidx.lifecycle.MutableLiveData
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.io.IOException
 
 class UserRepository(private val userAPI: UserAPI) {
 

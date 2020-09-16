@@ -5,7 +5,8 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.weird.eat_n_fit.R
-import com.weird.eat_n_fit.ui.sign.signIn.User
+import com.weird.eat_n_fit.model.signin.User
+import com.weird.eat_n_fit.model.usersignup.UserSignUpViewModel
 import com.weird.eat_n_fit.ui.utils.Preferences
 import kotlinx.android.synthetic.main.activity_sign_up.*
 

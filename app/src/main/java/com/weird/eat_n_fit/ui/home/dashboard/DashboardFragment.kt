@@ -3,27 +3,23 @@ package com.weird.eat_n_fit.ui.home
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.enigma_bank.ui.user.User
-import com.example.enigma_bank.ui.user.UserViewModel
+import com.weird.eat_n_fit.model.user.User
+import com.weird.eat_n_fit.model.user.UserViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.squareup.picasso.Picasso
 import com.weird.eat_n_fit.R
-import com.weird.eat_n_fit.ui.home.dashboard.FoodViewModel
-import com.weird.eat_n_fit.ui.home.dashboard.foodListAdapter
+import com.weird.eat_n_fit.model.food.FoodListAdapter
+import com.weird.eat_n_fit.model.food.FoodViewModel
 import com.weird.eat_n_fit.ui.order.DetailPaketActivity
 import com.weird.eat_n_fit.ui.sign.signIn.screen.SignInActivity
 import kotlinx.android.synthetic.main.fragment_dashboard.*
-import java.util.Observer
 
 
 class DashboardFragment : Fragment() {
@@ -32,7 +28,7 @@ class DashboardFragment : Fragment() {
     private val userViewModel by activityViewModels<UserViewModel>()
     private var user: User = User()
     val foodViewModel by activityViewModels<FoodViewModel>()
-    lateinit var foodRecycleView: foodListAdapter
+    lateinit var foodRecycleView: FoodListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,21 +48,24 @@ class DashboardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val token = sharedPreferences?.getString(getString(R.string.auth_token), "")
+
+        foodViewModel.getAllFoods(token!!, "1", "1000", "")
         rv_coming_soon.layoutManager = LinearLayoutManager(activity)
-        foodRecycleView =
-            foodListAdapter(foodViewModel.foodLiveData.value!!)
-        rv_coming_soon.adapter = foodRecycleView
-        foodViewModel.foodLiveData.observe(viewLifecycleOwner, androidx.lifecycle.Observer { foodRecycleView.notifyDataSetChanged() })
+        foodViewModel.foodLiveData.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+            foodRecycleView = FoodListAdapter(it)
+            rv_coming_soon.adapter = foodRecycleView
+//            foodRecycleView.notifyDataSetChanged()
+        })
 
         val id = sharedPreferences?.getString(getString(R.string.user_id), "")
-        val token = sharedPreferences?.getString(getString(R.string.auth_token), "")
-        if (id != null && token != null) {
+        if (id != null) {
             println("TOKENN $token")
             userViewModel.getUserByID(token, id)
             userViewModel.user.observe(viewLifecycleOwner, {
                 val bal = "Rp. ${it.user_balance}"
                 tv_saldo.text = bal
-                val name = "${it.user_f_name}"
+                val name = "${it.user_f_name} ${it.user_l_name}"
                 tv_nama.text = name
                 user = it
                 Picasso.get().load("${getString(R.string.image_link)}$id.jpg").into(iv_profile)
@@ -86,9 +85,6 @@ class DashboardFragment : Fragment() {
                 SignInActivity::class.java)
             startActivity(intent)
         }
-
-
-
 
         paketSehat.setOnClickListener{
             val intent = Intent(activity, DetailPaketActivity::class.java

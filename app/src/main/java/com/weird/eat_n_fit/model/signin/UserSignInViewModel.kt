@@ -1,4 +1,4 @@
-package com.weird.eat_n_fit.ui.sign.signIn
+package com.weird.eat_n_fit.model.signin
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel

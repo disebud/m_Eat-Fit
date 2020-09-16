@@ -1,9 +1,9 @@
-package com.weird.eat_n_fit.ui.sign.signUp
+package com.weird.eat_n_fit.model.usersignup
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.weird.eat_n_fit.config.RetrofitBuilder
-import com.weird.eat_n_fit.ui.sign.signIn.User
+import com.weird.eat_n_fit.model.signin.User
 
 class UserSignUpViewModel: ViewModel() {
     private val signUpRepo : UserSignUpRepository

@@ -1,25 +1,7 @@
 //package com.weird.eat_n_fit.ui.sign.signUp
 //
-//import android.app.Activity
-//import android.app.ProgressDialog
-//import android.content.Intent
-//import android.net.Uri
 //import androidx.appcompat.app.AppCompatActivity
-//import android.os.Bundle
-//import android.view.View
-//import android.widget.Toast
-//import com.github.dhaval2404.imagepicker.ImagePicker
-//import com.karumi.dexter.PermissionToken
-//import com.karumi.dexter.listener.PermissionDeniedResponse
-//import com.karumi.dexter.listener.PermissionGrantedResponse
 //import com.karumi.dexter.listener.single.PermissionListener
-//import com.weird.eat_n_fit.R
-//import com.weird.eat_n_fit.ui.home.HomeActivity
-//import com.weird.eat_n_fit.ui.sign.signIn.User
-//import com.weird.eat_n_fit.ui.sign.signIn.UserSignInModel
-//import com.weird.eat_n_fit.ui.utils.Preferences
-//import kotlinx.android.synthetic.main.activity_sign_up_photo.*
-//import java.util.*
 //
 //class SignUpPhotoActivity : AppCompatActivity(), PermissionListener {
 //
@@ -208,4 +190,4 @@
 //                Toast.makeText(this, "Task Cancelled", Toast.LENGTH_SHORT).show()
 //            }
 //        }
-//    }
+//}

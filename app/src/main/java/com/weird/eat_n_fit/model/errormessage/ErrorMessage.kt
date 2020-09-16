@@ -1,4 +1,4 @@
-package com.weird.eat_n_fit.ui.sign.signUp
+package com.weird.eat_n_fit.model.errormessage
 
 class ErrorMessage (
     var code: String = "",

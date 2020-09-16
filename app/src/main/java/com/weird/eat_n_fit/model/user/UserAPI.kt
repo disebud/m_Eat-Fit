@@ -1,4 +1,4 @@
-package com.example.enigma_bank.ui.user
+package com.weird.eat_n_fit.model.user
 
 import retrofit2.Call
 import retrofit2.http.*
