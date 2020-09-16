@@ -17,7 +17,7 @@ class UserSignUpRepository(private val userSignUpAPI: UserSignUpApi) {
             override fun onResponse(call: Call<ErrorMessage>, response: Response<ErrorMessage>) {
                 val res = response.body()
                 isDuplicate.value = res?.code != "200"
-                println("fun check email")
+
                 println(res)
             }
 
@@ -33,7 +33,7 @@ class UserSignUpRepository(private val userSignUpAPI: UserSignUpApi) {
             override fun onResponse(call: Call<User>, response: Response<User>) {
                 val res = response.body()
                 userData.value = res
-                println("fun signup")
+
                 println(res)
             }
 
