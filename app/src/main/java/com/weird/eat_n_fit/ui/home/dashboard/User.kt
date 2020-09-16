@@ -1,4 +1,4 @@
-package com.example.enigma_bank.ui.user
+package com.weird.eat_n_fit.ui.home.dashboard
 
 class User (
     var user_id: String = "",

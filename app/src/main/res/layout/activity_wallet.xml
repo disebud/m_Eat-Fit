@@ -7,32 +7,32 @@ android:layout_height="match_parent"
 android:background="@drawable/order_flat"
 tools:context=".ui.wallet.WalletActivity">
 
-<ImageView
-    android:id="@+id/back_wallet_settingsr"
-    android:layout_width="52dp"
-    android:layout_height="49dp"
-    android:layout_marginStart="8dp"
-    android:layout_marginTop="8dp"
-    android:src="@drawable/back"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:srcCompat="@drawable/back" />
+    <ImageView
+        android:id="@+id/back_wallet_settingsr"
+        android:layout_width="52dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="3dp"
+        android:src="@drawable/back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back" />
 
 
-<TextView
-    android:id="@+id/title_myWallet"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="60dp"
-    android:fontFamily="@font/poppins_bold"
-    android:gravity="center"
-    android:text="@string/my_wallet"
-    android:textColor="@color/colorBlack"
-    android:textSize="25sp"
-    android:textStyle="bold"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/title_myWallet"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:text="@string/my_wallet"
+        android:textColor="@color/colorBlack"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/idr_balance"
@@ -91,42 +91,24 @@ tools:context=".ui.wallet.WalletActivity">
         tools:listitem="@layout/row_item_wallet_transaksi" />
 
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_top_up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/orangeSecond"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/top_up_balance"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-<com.google.android.material.button.MaterialButton
-    android:id="@+id/btn_top_up"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="32dp"
-    android:layout_marginEnd="32dp"
-    android:backgroundTint="@color/orangeSecond"
-    android:fontFamily="@font/poppins_regular"
-    android:text="@string/top_up_balance"
-    android:textColor="@color/colorWhite"
-    android:textSize="18sp"
-    android:textStyle="bold"
-    app:cornerRadius="20dp"
-    app:layout_constraintBottom_toTopOf="@+id/btn_cancel_order"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent" />
 
-<com.google.android.material.button.MaterialButton
-    android:id="@+id/btn_cancel_order"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="32dp"
-    android:layout_marginEnd="32dp"
-    android:layout_marginBottom="10dp"
-    android:backgroundTint="@color/orangeFourth"
-    android:fontFamily="@font/poppins_regular"
-    android:text="cancel"
-    android:visibility="invisible"
-    android:textColor="@color/colorWhite"
-    android:textSize="18sp"
-    android:textStyle="bold"
-    app:cornerRadius="20dp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

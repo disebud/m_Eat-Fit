@@ -3,9 +3,6 @@ package com.weird.eat_n_fit.ui.home.order
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.enigma_bank.ui.user.User
-import com.example.enigma_bank.ui.user.UserAPI
-import com.example.enigma_bank.ui.user.UserRepository
 import com.weird.eat_n_fit.config.RetrofitBuilder
 
 class OrderViewModel : ViewModel() {

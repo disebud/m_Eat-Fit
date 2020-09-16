@@ -1,5 +1,6 @@
 package com.weird.eat_n_fit.ui.sign.signUp
 
+
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -10,6 +11,7 @@ import com.weird.eat_n_fit.ui.sign.signIn.User
 import com.weird.eat_n_fit.ui.sign.signIn.screen.SignInActivity
 import com.weird.eat_n_fit.ui.utils.Preferences
 import kotlinx.android.synthetic.main.activity_sign_up.*
+
 
 class SignUpActivity : AppCompatActivity() {
     private lateinit var mAuth: FirebaseAuth
@@ -101,6 +103,7 @@ class SignUpActivity : AppCompatActivity() {
 
     }
 //
+
 //    private fun checkingUsername(emailUser: String, data: User) {
 //
 //        mFirebaseDatabase.child(iUsername).addValueEventListener(object : ValueEventListener {

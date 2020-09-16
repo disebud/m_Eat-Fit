@@ -12,7 +12,7 @@
 
 
     <TextView
-        android:id="@+id/tv_movie"
+        android:id="@+id/tv_paket"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -25,16 +25,15 @@
 
     <TextView
         android:id="@+id/tv_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="97dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="10dp"
         android:fontFamily="@font/poppins_regular"
         android:text="Sabtu 12 Jan, 2020"
-        android:layout_marginBottom="10dp"
-        android:layout_marginStart="10dp"
         android:textColor="@color/colorBlack"
         android:textSize="11sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_movie" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_paket" />
 
     <TextView
         android:id="@+id/tv_money"
