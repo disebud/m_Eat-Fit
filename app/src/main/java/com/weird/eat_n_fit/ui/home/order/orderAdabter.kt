@@ -9,7 +9,6 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import coil.api.load
 import com.weird.eat_n_fit.R
-import com.weird.eat_n_fit.ui.home.dashboard.FoodList
 import kotlinx.android.synthetic.main.row_detail_paket.view.*
 import kotlinx.android.synthetic.main.row_detail_paket.view.detailFood
 import kotlinx.android.synthetic.main.row_item_order_transaction.view.*

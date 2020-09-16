@@ -8,8 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.weird.eat_n_fit.R
-import com.weird.eat_n_fit.ui.home.dashboard.FoodViewModel
-import com.weird.eat_n_fit.ui.home.dashboard.foodListAdapter
 import kotlinx.android.synthetic.main.fragment_dashboard.*
 import kotlinx.android.synthetic.main.fragment_order.*
 

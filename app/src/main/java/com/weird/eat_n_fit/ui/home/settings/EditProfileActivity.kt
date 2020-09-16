@@ -9,9 +9,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
-import com.weird.eat_n_fit.ui.home.dashboard.User
-import com.weird.eat_n_fit.ui.home.dashboard.UserViewModel
 import com.weird.eat_n_fit.R
+import com.weird.eat_n_fit.model.user.User
+import com.weird.eat_n_fit.model.user.UserViewModel
 import com.weird.eat_n_fit.ui.home.HomeActivity
 import com.weird.eat_n_fit.ui.sign.signIn.screen.SignInActivity
 import kotlinx.android.synthetic.main.activity_edit_profile.*

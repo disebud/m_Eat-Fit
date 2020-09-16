@@ -8,9 +8,9 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.weird.eat_n_fit.ui.home.dashboard.User
-import com.weird.eat_n_fit.ui.home.dashboard.UserViewModel
 import com.weird.eat_n_fit.R
+import com.weird.eat_n_fit.model.user.User
+import com.weird.eat_n_fit.model.user.UserViewModel
 import com.weird.eat_n_fit.ui.sign.signIn.screen.SignInActivity
 import com.weird.eat_n_fit.ui.wallet.adapter.WalletAdapter
 import com.weird.eat_n_fit.ui.wallet.model.Wallet
