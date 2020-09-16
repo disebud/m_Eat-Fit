@@ -7,6 +7,8 @@ import com.weird.eat_n_fit.config.RetrofitBuilder
 
 class UserViewModel : ViewModel() {
 
+
+
     private val userRepo: UserRepository
 
     init {

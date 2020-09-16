@@ -12,13 +12,18 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.enigma_bank.ui.user.User
 import com.example.enigma_bank.ui.user.UserViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.squareup.picasso.Picasso
 import com.weird.eat_n_fit.R
+import com.weird.eat_n_fit.ui.home.dashboard.FoodViewModel
+import com.weird.eat_n_fit.ui.home.dashboard.foodListAdapter
+import com.weird.eat_n_fit.ui.order.DetailPaketActivity
 import com.weird.eat_n_fit.ui.sign.signIn.screen.SignInActivity
 import kotlinx.android.synthetic.main.fragment_dashboard.*
+import java.util.Observer
 
 
 class DashboardFragment : Fragment() {
@@ -26,6 +31,8 @@ class DashboardFragment : Fragment() {
     private var sharedPreferences: SharedPreferences? = null
     private val userViewModel by activityViewModels<UserViewModel>()
     private var user: User = User()
+    val foodViewModel by activityViewModels<FoodViewModel>()
+    lateinit var foodRecycleView: foodListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +52,11 @@ class DashboardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        rv_coming_soon.layoutManager = LinearLayoutManager(activity)
+        foodRecycleView =
+            foodListAdapter(foodViewModel.foodLiveData.value!!)
+        rv_coming_soon.adapter = foodRecycleView
+        foodViewModel.foodLiveData.observe(viewLifecycleOwner, androidx.lifecycle.Observer { foodRecycleView.notifyDataSetChanged() })
 
         val id = sharedPreferences?.getString(getString(R.string.user_id), "")
         val token = sharedPreferences?.getString(getString(R.string.auth_token), "")
@@ -72,6 +84,15 @@ class DashboardFragment : Fragment() {
             val intent = Intent(
                 context,
                 SignInActivity::class.java)
+            startActivity(intent)
+        }
+
+
+
+
+        paketSehat.setOnClickListener{
+            val intent = Intent(activity, DetailPaketActivity::class.java
+            )
             startActivity(intent)
         }
 

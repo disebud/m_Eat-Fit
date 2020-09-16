@@ -17,10 +17,12 @@ class UserSignUpViewModel: ViewModel() {
     val isDuplicate: LiveData<Boolean> = signUpRepo.isDuplicate
 
     fun checkEmail(user: User) {
+        println(user)
         signUpRepo.checkEmail(user)
     }
 
     fun signUp(user: User) {
+        println(user)
         signUpRepo.signUp(user)
     }
 }

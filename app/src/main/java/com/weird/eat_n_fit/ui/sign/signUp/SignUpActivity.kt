@@ -77,7 +77,11 @@ class SignUpActivity : AppCompatActivity() {
         user.user_password = passwordUser
         user.user_gender = genderUser
         println(Fname)
-
+        println(Lname)
+        println(emailUser)
+        println(passwordUser)
+        println(genderUser)
+        println(user)
         userSignUpViewModel.checkEmail(user)
         userSignUpViewModel.isDuplicate.observe(this, { isDuplicate ->
             if (isDuplicate) {
