@@ -63,12 +63,12 @@ class DashboardFragment : Fragment() {
             println("TOKENN $token")
             userViewModel.getUserByID(token, id)
             userViewModel.user.observe(viewLifecycleOwner, {
+                Picasso.get().load("${getString(R.string.image_link)}$id.jpg").into(iv_profile)
                 val bal = "Rp. ${it.user_balance}"
                 tv_saldo.text = bal
                 val name = "${it.user_f_name} ${it.user_l_name}"
                 tv_nama.text = name
                 user = it
-                Picasso.get().load("${getString(R.string.image_link)}$id.jpg").into(iv_profile)
             })
         } else {
 //            view.findNavController().navigate(R.id.action_to_signInActivity)
