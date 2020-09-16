@@ -168,6 +168,11 @@
                 android:paddingRight="10dp"
                 app:layout_constraintTop_toBottomOf="@+id/title_paket">
 
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_packet"
+                    android:layout_width="363dp"
+                    android:layout_height="233dp" />
+
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="160dp"
                     android:layout_height="120dp"
@@ -217,32 +222,7 @@
                     app:cardCornerRadius="15dp"
                     app:cardElevation="2dp">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="8dp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginRight="10dp"
-                            android:fontFamily="@font/poppins_regular"
-                            android:text="Paket\nSehat\nKita"
-                            android:textAlignment="textEnd"
-                            android:textColor="@color/colorBlack"
-                            android:textSize="18dp" />
-
-                        <ImageView
-                            android:layout_width="60dp"
-                            android:layout_height="80dp"
-                            android:layout_alignParentLeft="true"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="5dp"
-                            android:src="@drawable/sehat_kita" />
-
-                    </RelativeLayout>
 
                 </com.google.android.material.card.MaterialCardView>
 
@@ -258,82 +238,9 @@
                 android:padding="10dp"
                 app:layout_constraintTop_toBottomOf="@+id/row_paket_one">
 
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="160dp"
-                    android:layout_height="120dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_weight="1"
-                    app:cardBackgroundColor="@color/orangeThird"
-                    app:cardCornerRadius="15dp"
-                    app:cardElevation="2dp">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="8dp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="20dp"
-                            android:fontFamily="@font/poppins_regular"
-                            android:gravity="center_vertical"
-                            android:text="Menu\nSeafood"
-                            android:textColor="@color/colorBlack"
-                            android:textSize="18dp" />
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="80dp"
-                            android:layout_alignParentRight="true"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginRight="10dp"
-                            android:src="@drawable/seafood" />
-
-                    </RelativeLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="160dp"
-                    android:layout_height="120dp"
-                    android:layout_marginLeft="14dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    app:cardBackgroundColor="@color/orangeThird"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="2dp">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="8dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginRight="10dp"
-                            android:fontFamily="@font/poppins_regular"
-                            android:text="Menu\nDaging\nAyam"
-                            android:textAlignment="textEnd"
-                            android:textColor="@color/colorBlack"
-                            android:textSize="18dp" />
-
-                        <ImageView
-                            android:layout_width="60dp"
-                            android:layout_height="80dp"
-                            android:layout_alignParentLeft="true"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="5dp"
-                            android:src="@drawable/chicken" />
-
-                    </RelativeLayout>
-
-                </com.google.android.material.card.MaterialCardView>
 
 
             </LinearLayout>
