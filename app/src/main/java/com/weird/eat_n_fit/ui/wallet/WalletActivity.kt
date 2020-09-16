@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.enigma_bank.ui.user.User
 import com.example.enigma_bank.ui.user.UserViewModel
@@ -14,6 +15,7 @@ import com.weird.eat_n_fit.R
 import com.weird.eat_n_fit.ui.sign.signIn.screen.SignInActivity
 import com.weird.eat_n_fit.ui.wallet.adapter.WalletAdapter
 import com.weird.eat_n_fit.ui.wallet.model.Wallet
+import com.weird.eat_n_fit.ui.wallet.transaction.TransactionViewModel
 import kotlinx.android.synthetic.main.activity_wallet.*
 import java.text.NumberFormat
 import java.util.*
@@ -22,6 +24,7 @@ import kotlin.collections.ArrayList
 class WalletActivity : AppCompatActivity() {
 
     private var sharedPreferences: SharedPreferences? = null
+    private val transactionViewModel by viewModels<TransactionViewModel>()
     private val userViewModel by viewModels<UserViewModel>()
     private var user: User = User()
 
@@ -74,10 +77,28 @@ class WalletActivity : AppCompatActivity() {
 
 
     private fun initListener() {
-        rv_transaksi.layoutManager = LinearLayoutManager(this)
-        rv_transaksi.adapter = WalletAdapter(dataList){
 
-        }
+        val token = sharedPreferences?.getString(getString(R.string.auth_token), "")
+
+        userViewModel.getUserInfo().observe(this, {
+            if (token != null) {
+                transactionViewModel.TransactionWalletList(token,it.user_id)
+            }
+        })
+
+        rv_transaksi.layoutManager = LinearLayoutManager(this)
+        transactionViewModel.getTransactionList().observe(this,{
+            if (it != null) {
+                rv_transaksi.adapter = WalletAdapter(it){
+
+                }
+            }
+        })
+//        rv_transaksi.adapter = WalletAdapter(dataList){
+//
+//        }
+
+
 
         btn_top_up.setOnClickListener {
             startActivity(Intent(this, TopUpActivity::class.java))

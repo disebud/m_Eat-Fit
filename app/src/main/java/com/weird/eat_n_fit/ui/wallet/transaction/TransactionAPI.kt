@@ -12,7 +12,7 @@ interface TransactionAPI {
     fun fetchPostNewTransaction(@Body transaction: Transaction): Call<Transaction>
 
     @GET("topup/history/{id}")
-    fun TransactionTopUpList(@Path("id") id: String): Call<List<TransactionWallet>>
+    fun TransactionWalletList(@Header("Authorization") token : String,@Path("id") id: String): Call<List<TransactionWallet>>
 
     @POST("topup/{id}")
     fun PostTopUp  (@Header("Authorization") token : String, @Body amount: Amount, @Path("id") id: String): Call<RespAmount>

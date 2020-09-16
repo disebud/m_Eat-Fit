@@ -17,6 +17,7 @@ import com.example.enigma_bank.ui.user.User
 import com.example.enigma_bank.ui.user.UserViewModel
 import com.weird.eat_n_fit.R
 import com.weird.eat_n_fit.ui.sign.signIn.screen.SignInActivity
+import kotlinx.android.synthetic.main.activity_wallet.*
 import kotlinx.android.synthetic.main.fragment_dashboard.*
 import kotlinx.android.synthetic.main.fragment_dashboard.tv_saldo
 import java.text.NumberFormat
@@ -81,18 +82,18 @@ class DashboardFragment : Fragment() {
 
 
     fun GetDataUser() {
+
         val id = sharedPreferences?.getString(getString(R.string.user_id), "")
         val token = sharedPreferences?.getString(getString(R.string.auth_token), "")
         if (id != null && token != null) {
             println("TOKENN $token")
             userViewModel.getUserByID(token, id)
             userViewModel.user.observe(viewLifecycleOwner, {
-                val bal = "Rp. ${it.user_balance}"
-                tv_saldo.text = bal
-//                currecy(it.user_balance!!.toDouble(), idr_balance)
+                user = it
+                currecy(it.user_balance!!.toDouble(), tv_saldo)
                 val name = "${it.user_f_name}"
                 tv_nama.text = name
-                user = it
+
 //                Picasso.get().load("${getString(R.string.image_link)}$id.jpg").into(iv_profile)
                 Glide.with(this)
                     .load("${getString(R.string.image_link)}$id.jpg")
@@ -116,9 +117,6 @@ class DashboardFragment : Fragment() {
             )
             startActivity(intent)
     }
-
-
-
 
 
     }

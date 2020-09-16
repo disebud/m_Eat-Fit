@@ -1,5 +1,8 @@
 package com.weird.eat_n_fit.ui.wallet.transaction
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
 class Transaction(
     val id: String = "",
     val userID: String = "",
@@ -7,12 +10,14 @@ class Transaction(
     val created: String = "",
 )
 
+
 class TransactionWallet(
     val balhistory_id: String = "",
     val balhistory_date: String = "",
     val user_id: String = "",
     val amount: String = "",
     val balhistory_type: String = "",
+    val balhistory_title: String = ""
 )
 
 class Amount(

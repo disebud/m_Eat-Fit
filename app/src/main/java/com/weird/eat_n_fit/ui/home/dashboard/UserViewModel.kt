@@ -14,7 +14,11 @@ class UserViewModel : ViewModel() {
         userRepo = UserRepository(userAPI)
     }
 
-    val user: LiveData<User> = userRepo.user
+    val user: LiveData<User> = userRepo.userLiveDataa
+
+    fun getUserInfo() = userRepo.userLiveDataa as LiveData<User>
+
+    fun updateDataUser(token: String,user: User,id: String) = userRepo.updateUser(token,user,id)
 
     fun getUserByID(token: String, id: String) {
         val authToken = "Bearer $token"
