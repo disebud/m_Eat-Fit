@@ -19,6 +19,9 @@ import com.squareup.picasso.Picasso
 import com.weird.eat_n_fit.R
 import com.weird.eat_n_fit.model.food.FoodListAdapter
 import com.weird.eat_n_fit.model.food.FoodViewModel
+import com.weird.eat_n_fit.model.packet.PacketListAdapter
+import com.weird.eat_n_fit.model.packet.PacketRepository
+import com.weird.eat_n_fit.model.packet.PacketViewModel
 import com.weird.eat_n_fit.ui.order.DetailPaketActivity
 import com.weird.eat_n_fit.ui.sign.signIn.screen.SignInActivity
 import kotlinx.android.synthetic.main.fragment_dashboard.*
@@ -32,6 +35,9 @@ class DashboardFragment : Fragment() {
     private var user: User = User()
     val foodViewModel by activityViewModels<FoodViewModel>()
     lateinit var foodRecycleView: FoodListAdapter
+
+    val packetViewModel by activityViewModels<PacketViewModel>()
+    lateinit var packetRecycleView : PacketListAdapter
 
     var imageSlide = intArrayOf(
     R.drawable.cr_1,
@@ -70,13 +76,20 @@ class DashboardFragment : Fragment() {
         val token = sharedPreferences?.getString(getString(R.string.auth_token), "")
 
         foodViewModel.getAllFoods(token!!, "1", "1000", "")
-
+        packetViewModel.getAllPacket(token!!, "1", "1000", "")
         val gridRecyclerView = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         rv_coming_soon.layoutManager = gridRecyclerView
 
         foodViewModel.foodLiveData.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
             foodRecycleView = FoodListAdapter(foodViewModel.foodLiveData.value!!)
             rv_coming_soon.adapter = foodRecycleView
+        })
+        val grid= StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        rv_packet.layoutManager = grid
+
+        packetViewModel.PacketLiveData.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+            packetRecycleView = PacketListAdapter(packetViewModel.PacketLiveData.value!!)
+            rv_packet.adapter = packetRecycleView
         })
 
         // carousel
