@@ -1,4 +1,4 @@
-package com.weird.eat_n_fit.ui.home.dashboard
+package com.weird.eat_n_fit.model.user
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
@@ -6,8 +6,6 @@ import com.weird.eat_n_fit.config.RetrofitBuilder
 
 
 class UserViewModel : ViewModel() {
-
-
 
     private val userRepo: UserRepository
 

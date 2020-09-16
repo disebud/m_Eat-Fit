@@ -1,4 +1,4 @@
-package com.weird.eat_n_fit.ui.home.dashboard
+package com.weird.eat_n_fit.model.user
 
 class User (
     var user_id: String = "",

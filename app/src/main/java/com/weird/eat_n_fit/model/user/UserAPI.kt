@@ -1,6 +1,5 @@
-package com.weird.eat_n_fit.ui.home.dashboard
+package com.weird.eat_n_fit.model.user
 
-import com.weird.eat_n_fit.ui.home.dashboard.User
 import retrofit2.Call
 import retrofit2.http.*
 

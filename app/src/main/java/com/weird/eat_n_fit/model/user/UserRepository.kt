@@ -1,4 +1,4 @@
-package com.weird.eat_n_fit.ui.home.dashboard
+package com.weird.eat_n_fit.model.user
 
 import androidx.lifecycle.MutableLiveData
 import retrofit2.Call
@@ -29,7 +29,7 @@ class UserRepository(private val userAPI: UserAPI) {
     }
 
     fun updateUser(token:String, user: User, id: String) {
-        var authToken = "Bearer ${token}"
+        val authToken = "Bearer $token"
         userAPI.updateUser(authToken, user, id).enqueue(object : Callback<User> {
 
             override fun onResponse(call: Call<User>, response: Response<User>) {

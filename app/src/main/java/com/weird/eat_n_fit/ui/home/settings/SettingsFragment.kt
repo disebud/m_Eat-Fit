@@ -11,8 +11,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.weird.eat_n_fit.ui.home.dashboard.User
-import com.weird.eat_n_fit.ui.home.dashboard.UserViewModel
+import com.weird.eat_n_fit.model.user.User
+import com.weird.eat_n_fit.model.user.UserViewModel
+import com.squareup.picasso.Picasso
 import com.weird.eat_n_fit.R
 import com.weird.eat_n_fit.ui.sign.signIn.screen.SignInActivity
 import com.weird.eat_n_fit.ui.utils.Preferences

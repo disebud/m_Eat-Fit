@@ -11,17 +11,14 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.weird.eat_n_fit.ui.home.dashboard.User
-import com.weird.eat_n_fit.ui.home.dashboard.UserViewModel
+import com.weird.eat_n_fit.model.user.User
+import com.weird.eat_n_fit.model.user.UserViewModel
 import com.google.firebase.auth.FirebaseAuth
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
-
+import com.squareup.picasso.Picasso
 import com.weird.eat_n_fit.R
-import com.weird.eat_n_fit.ui.home.dashboard.FoodViewModel
-import com.weird.eat_n_fit.ui.home.dashboard.foodListAdapter
+import com.weird.eat_n_fit.model.food.FoodListAdapter
+import com.weird.eat_n_fit.model.food.FoodViewModel
 import com.weird.eat_n_fit.ui.order.DetailPaketActivity
 import com.weird.eat_n_fit.ui.sign.signIn.screen.SignInActivity
 import kotlinx.android.synthetic.main.fragment_dashboard.*
@@ -34,7 +31,7 @@ class DashboardFragment : Fragment() {
     private val userViewModel by activityViewModels<UserViewModel>()
     private var user: User = User()
     val foodViewModel by activityViewModels<FoodViewModel>()
-    lateinit var foodRecycleView: foodListAdapter
+    lateinit var foodRecycleView: FoodListAdapter
 
     var imageSlide = intArrayOf(
     R.drawable.cr_1,
@@ -70,12 +67,17 @@ class DashboardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val token = sharedPreferences?.getString(getString(R.string.auth_token), "")
+
+        foodViewModel.getAllFoods(token!!, "1", "1000", "")
+
         val gridRecyclerView = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         rv_coming_soon.layoutManager = gridRecyclerView
-        foodRecycleView =
-            foodListAdapter(foodViewModel.foodLiveData.value!!)
-        rv_coming_soon.adapter = foodRecycleView
-        foodViewModel.foodLiveData.observe(viewLifecycleOwner, androidx.lifecycle.Observer { foodRecycleView.notifyDataSetChanged() })
+
+        foodViewModel.foodLiveData.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+            foodRecycleView = FoodListAdapter(foodViewModel.foodLiveData.value!!)
+            rv_coming_soon.adapter = foodRecycleView
+        })
 
         // carousel
         carouselView.setImageListener{position, imageView ->
@@ -97,19 +99,16 @@ class DashboardFragment : Fragment() {
 
         val id = sharedPreferences?.getString(getString(R.string.user_id), "")
         val token = sharedPreferences?.getString(getString(R.string.auth_token), "")
-        if (id != null && token != null) {
+        if (id != null) {
             println("TOKENN $token")
-            userViewModel.getUserByID(token, id)
+            userViewModel.getUserByID(token!!, id)
             userViewModel.user.observe(viewLifecycleOwner, {
-                user = it
-                currecy(it.user_balance!!.toDouble(), tv_saldo)
-                val name = "${it.user_f_name}"
+                Picasso.get().load("${getString(R.string.image_link)}$id.jpg").into(iv_profile)
+                val bal = "Rp. ${it.user_balance}"
+                tv_saldo.text = bal
+                val name = "${it.user_f_name} ${it.user_l_name}"
                 tv_nama.text = name
-
-                Glide.with(this)
-                    .load("${getString(R.string.image_link)}$id.jpg")
-                    .apply(RequestOptions.circleCropTransform())
-                    .into(iv_profile)
+                user = it
             })
         } else {
             val intent = Intent(
@@ -125,9 +124,7 @@ class DashboardFragment : Fragment() {
                 SignInActivity::class.java
             )
             startActivity(intent)
-    }
-
-
+        }
 
         paketSehat.setOnClickListener{
             val intent = Intent(activity, DetailPaketActivity::class.java

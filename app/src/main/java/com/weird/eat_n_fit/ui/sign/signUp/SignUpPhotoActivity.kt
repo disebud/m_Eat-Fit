@@ -1,19 +1,27 @@
-package com.weird.eat_n_fit.ui.sign.signUp
-
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import com.karumi.dexter.listener.single.PermissionListener
-import com.weird.eat_n_fit.R
-
-
-
-    class SignUpPhotoActivity : AppCompatActivity() {
-//    class SignUpPhotoActivity : AppCompatActivity(), PermissionListener {
-
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
-            setContentView(R.layout.activity_sign_up_photo)
-
+//package com.weird.eat_n_fit.ui.sign.signUp
+//
+//import androidx.appcompat.app.AppCompatActivity
+//import com.karumi.dexter.listener.single.PermissionListener
+//
+//class SignUpPhotoActivity : AppCompatActivity(), PermissionListener {
+//
+//        val REQUEST_IMAGE_CAPTURE = 1
+//        var statusAdd:Boolean = false
+//        lateinit var filePath: Uri
+//
+//        lateinit var storage: FirebaseStorage
+//        lateinit var storageReference: StorageReference
+//
+//        lateinit var preferences: Preferences
+//
+//         var user : User? = null
+//
+//        private lateinit var mFirebaseDatabase: DatabaseReference
+//        private lateinit var mFirebaseInstance: FirebaseDatabase
+//
+//        override fun onCreate(savedInstanceState: Bundle?) {
+//            super.onCreate(savedInstanceState)
+//            setContentView(R.layout.activity_sign_up_photo)
 //
 //            preferences = Preferences(this)
 //            storage = FirebaseStorage.getInstance()
@@ -80,7 +88,7 @@ import com.weird.eat_n_fit.R
 //                }
 //
 //            }
-        }
+//        }
 
 //
 //        private fun saveToFirebase(url: String) {
@@ -185,7 +193,4 @@ import com.weird.eat_n_fit.R
 //                Toast.makeText(this, "Task Cancelled", Toast.LENGTH_SHORT).show()
 //            }
 //        }
-//    }
-
-    }
-
+//}
