@@ -13,6 +13,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.enigma_bank.ui.user.User
 import com.example.enigma_bank.ui.user.UserViewModel
 import com.google.firebase.auth.FirebaseAuth
@@ -52,7 +53,8 @@ class DashboardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        rv_coming_soon.layoutManager = LinearLayoutManager(activity)
+        val gridRecyclerView = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        rv_coming_soon.layoutManager = gridRecyclerView
         foodRecycleView =
             foodListAdapter(foodViewModel.foodLiveData.value!!)
         rv_coming_soon.adapter = foodRecycleView
