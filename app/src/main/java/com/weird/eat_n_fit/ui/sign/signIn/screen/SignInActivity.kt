@@ -66,7 +66,7 @@ class SignInActivity : AppCompatActivity() {
 
         preferences = Preferences(this)
         preferences.setValues("Intro", "2")
-        if (preferences.getValues("status").equals("0")) {
+        if (preferences.getValues("status").equals("1")) {
             finishAffinity()
 
             val intent = Intent(
