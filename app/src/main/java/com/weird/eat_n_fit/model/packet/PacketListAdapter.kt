@@ -1,15 +1,23 @@
 package com.weird.eat_n_fit.model.packet
 
+import android.app.Activity
+import android.content.Intent
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.os.bundleOf
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import com.weird.eat_n_fit.R
 import com.weird.eat_n_fit.model.food.Food
 import com.weird.eat_n_fit.model.food.FoodViewHolder
+import com.weird.eat_n_fit.ui.order.DetailMenuActivity
+import com.weird.eat_n_fit.ui.order.DetailPaketActivity
+import kotlinx.android.synthetic.main.row_packet.view.*
 
 class PacketListAdapter(private val packetList: List<Packet>): RecyclerView.Adapter<PacketViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PacketViewHolder {
@@ -23,8 +31,16 @@ class PacketListAdapter(private val packetList: List<Packet>): RecyclerView.Adap
 
         Picasso
             .get()
-            .load("http://b4e5342d462b.ngrok.io/images/${packetList[position].packet_id}.jpg")
+            .load("http://34.101.198.49:8082/images/${packetList[position].packet_id}.jpg")
             .into(holder.foodImage)
+        val activity = holder.itemView.context as Activity
+        holder.itemView.setOnClickListener {
+
+            val intent = Intent(activity, DetailPaketActivity::class.java)
+            intent.putExtra("idPacket", packetList[position].packet_id)
+            intent.putExtra("namaPacket", packetList[position].packet_name)
+            activity.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
