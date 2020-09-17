@@ -52,8 +52,8 @@
 
     <TextView
         android:id="@+id/tv_idr_menu_selected"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="34dp"
         android:fontFamily="@font/poppins_regular"
         android:text="Rp.10.000"
         android:textColor="@color/orangeMain"

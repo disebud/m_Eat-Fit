@@ -1,6 +1,7 @@
 package com.weird.eat_n_fit.ui.order
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -90,6 +91,11 @@ class NextOrderActivity : AppCompatActivity() {
             Log.d("picker value", pickerVals2[valuePicker2])
         })
 
+
+        btn_next_order.setOnClickListener {
+            val intent = Intent(this, CheckoutActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 
