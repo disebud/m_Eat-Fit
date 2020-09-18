@@ -1,6 +1,7 @@
 package com.weird.eat_n_fit.ui.order
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -44,5 +45,11 @@ class DetailMenuActivity : AppCompatActivity() {
             .get()
             .load("http://34.101.198.49:8082/images/${idFood}.jpg")
             .into(iv_poster_image)
+        btn_order_menu.setOnClickListener {
+            val intent =Intent(this,NextOrderActivity::class.java)
+            startActivity(intent)
+        }
     }
+
+
 }

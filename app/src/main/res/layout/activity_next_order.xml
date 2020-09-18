@@ -196,38 +196,38 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginStart="22dp"
         android:background="@color/orangeFourth"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/time_selected">
+        app:layout_constraintBottom_toTopOf="@+id/btn_next_order"
+        app:layout_constraintTop_toBottomOf="@+id/time_selected"
+        tools:layout_editor_absoluteX="22dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
             android:fontFamily="@font/poppins_bold"
             android:text="Address"
-            android:layout_weight="1"
             android:textColor="@color/colorBlack"
             android:textSize="18dp" />
 
 
         <com.google.android.material.textfield.TextInputEditText
-            android:inputType="textMultiLine"
-        android:lines="8"
-        android:minLines="1"
-        android:gravity="top|left"
-        android:maxLines="5"
-            android:textColor="@color/colorWhite"
-            android:layout_marginBottom="25dp"
-            android:layout_weight="5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:scrollbars="vertical" />
+            android:layout_marginBottom="25dp"
+            android:layout_weight="5"
+            android:gravity="top|left"
+            android:inputType="textMultiLine"
+            android:lines="8"
+            android:maxLines="5"
+            android:minLines="1"
+            android:scrollbars="vertical"
+            android:textColor="@color/colorWhite" />
 
     </LinearLayout>
 
