@@ -170,8 +170,9 @@
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_packet"
-                    android:layout_width="363dp"
-                    android:layout_height="233dp" />
+                    android:layout_width="385dp"
+                    android:layout_height="325dp"
+                    tools:listitem="@layout/row_packet"/>
 
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="160dp"

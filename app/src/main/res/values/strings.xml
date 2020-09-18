@@ -9,5 +9,5 @@
     <string name="shared_preferences_name">com.weird.eat_n_fit</string>
     <string name="auth_token">TOKEN</string>
     <string name="user_id">USER_ID</string>
-    <string name="image_link">http://b4e5342d462b.ngrok.io/images/</string>
+    <string name="image_link">http://34.101.198.49:8082/images/</string>
 </resources>
