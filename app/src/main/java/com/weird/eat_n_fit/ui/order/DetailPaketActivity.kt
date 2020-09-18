@@ -38,6 +38,7 @@ class DetailPaketActivity : AppCompatActivity() {
         val gridRecyclerView = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         rc_paket.layoutManager = gridRecyclerView
 
+
         packetViewModel.listFood.observe(this, Observer{
             packetRecycleView = DetailPacketAdapter(it)
             rc_paket.adapter = packetRecycleView

@@ -30,12 +30,12 @@ class PacketRepository(private val packetAPI: PacketAPI) {
     fun getPacketByID(token:String, id: String) {
         packetAPI.getPacketByID(token, id).enqueue(object : Callback<WrapperDetail> {
             override fun onResponse(call: Call<WrapperDetail>, response: Response<WrapperDetail>) {
-                println(response.body())
+                println("ini respone ${response.body()}")
                 if (response.isSuccessful) {
 
                     val res= response.body()
                     detailPaket.value=res?.packet
-                    listFood.value=res?.foodList
+                    listFood.value= res?.list_food
 
                 }
             }

@@ -11,7 +11,7 @@ class Packet(   var packet_id: String,
 
 }
 
-class WrapperDetail ( var packet:Packet,
-var foodList:List<Food>){
+data class WrapperDetail ( var packet:Packet,
+var list_food:List<Food>){
 
 }

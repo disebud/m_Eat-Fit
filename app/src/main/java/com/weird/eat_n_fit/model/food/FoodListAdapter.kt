@@ -1,5 +1,7 @@
 package com.weird.eat_n_fit.model.food
 
+import android.app.Activity
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +10,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import com.weird.eat_n_fit.R
+import com.weird.eat_n_fit.ui.order.DetailMenuActivity
+import com.weird.eat_n_fit.ui.order.DetailPaketActivity
 import java.text.NumberFormat
 import java.util.*
 
@@ -26,6 +30,20 @@ class FoodListAdapter (private val foodList: List<Food>):RecyclerView.Adapter<Fo
             .get()
             .load("http://34.101.198.49:8082/images/${foodList[position].food_id}.jpg")
             .into(holder.foodImage)
+        val activity = holder.itemView.context as Activity
+        holder.itemView.setOnClickListener {
+            val intent = Intent(activity, DetailMenuActivity::class.java)
+            intent.putExtra("idFood", foodList[position].food_id)
+            intent.putExtra("nameFood", foodList[position].food_name)
+            intent.putExtra("price", foodList[position].food_price)
+            intent.putExtra("desc", foodList[position].food_desc)
+            intent.putExtra("fat", foodList[position].food_fat)
+            intent.putExtra("protein", foodList[position].food_protein)
+            intent.putExtra("carbo", foodList[position].food_carbs)
+            intent.putExtra("calories", foodList[position].food_calories)
+            intent.putExtra("portion", foodList[position].food_portion)
+            activity.startActivity(intent)
+        }
     }
     fun currency(harga:Double, textView: TextView) {
         val localeID = Locale("in", "ID")
