@@ -60,41 +60,6 @@ class NextOrderActivity : AppCompatActivity() {
             showDatePickerDialog()
         }
 
-        // create an OnDateSetListener
-//        val dateSetListener = object : DatePickerDialog.OnDateSetListener  {
-//            override fun onDateSet(view: DatePicker, year: Int, monthOfYear: Int,
-//                                   dayOfMonth: Int) {
-//                cal.set(Calendar.YEAR, year)
-//                cal.set(Calendar.MONTH, monthOfYear)
-//                cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
-//
-//                updateDateInView()
-//
-//            }
-//        }
-
-
-
-        // when you click on the button, show DatePickerDialog that is set with OnDateSetListener
-//        button_date!!.setOnClickListener(object : View.OnClickListener {
-//            override fun onClick(view: View) {
-//                DatePickerDialog(this@NextOrderActivity,
-//                    dateSetListener,
-//                    // set DatePickerDialog to point to today's date when it loads up
-//                    cal.get(Calendar.YEAR),
-//                    cal.get(Calendar.MONTH),
-//                    cal.get(Calendar.DAY_OF_MONTH)).show()
-//
-//
-//            }
-//
-//        })
-
-        /////////////////////
-
-        // Picker 1 = Jumlah Porsi
-        // Picker 2 = Time
-        val BLACK  = -0x1000000
         picker1 = findViewById(R.id.porsi_numberpicker)
         picker2 = findViewById(R.id.time_numberpicker)
         picker1.setMaxValue(1000)

@@ -42,19 +42,19 @@ class SignUpActivity : AppCompatActivity() {
             val genderUser = et_gender_register.text.toString()
 
 
-            if (Fname.equals("")) {
+            if (Fname == "") {
             et_f_name_register.error = "Silahkan isi Username"
             et_f_name_register.requestFocus()
-            } else if (Lname.equals("")) {
+            } else if (Lname == "") {
                 et_l_name_register.error = "Silahkan isi Password"
                 et_l_name_register.requestFocus()
-            }  else if (emailUser.equals("")) {
+            }  else if (emailUser == "") {
                 email_register.error = "Silahkan isi Email"
                 email_register.requestFocus()
-            }else if (passwordUser.equals("")) {
+            }else if (passwordUser == "") {
                 password_register.error = "Silahkan isi Password"
                 password_register.requestFocus()
-            }else if (genderUser.equals("")) {
+            }else if (genderUser == "") {
                 et_gender_register.error = "Silahkan isi Nama"
                 et_gender_register.requestFocus()
             } else {

@@ -22,7 +22,10 @@
         android:requestLegacyExternalStorage="true"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.NoActionBar">
-        <activity android:name=".ui.keranjang.ListCartActivity"></activity>
+        <activity android:name=".ui.order.detailmenu.DetailActivity"></activity>
+        <activity android:name=".ui.keranjang.ListCartActivity" />
+        <activity android:name=".DetailCartActivity" />
+        <activity android:name=".ui.order.CartActivity" />
         <activity android:name=".ui.qrcode.GenerateqrActivity" />
         <activity android:name=".ui.qrcode.ScanqrActivity" />
         <activity android:name=".ui.home.settings.EditProfileActivity" />

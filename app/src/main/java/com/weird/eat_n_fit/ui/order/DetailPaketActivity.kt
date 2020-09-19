@@ -3,20 +3,26 @@ package com.weird.eat_n_fit.ui.order
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.icu.number.Precision.currency
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.squareup.picasso.Picasso
 import com.weird.eat_n_fit.R
 import com.weird.eat_n_fit.model.food.FoodListAdapter
 import com.weird.eat_n_fit.model.packet.DetailPacketAdapter
+import com.weird.eat_n_fit.model.packet.Packet
 import com.weird.eat_n_fit.model.packet.PacketListAdapter
 import com.weird.eat_n_fit.model.packet.PacketViewModel
 import kotlinx.android.synthetic.main.activity_detail_paket.*
 import kotlinx.android.synthetic.main.fragment_dashboard.*
 import okhttp3.internal.notify
+import java.text.NumberFormat
+import java.util.*
 
 class DetailPaketActivity : AppCompatActivity() {
     private var sharedPreferences: SharedPreferences? = null
@@ -36,6 +42,13 @@ class DetailPaketActivity : AppCompatActivity() {
 
         packetViewModel.getPacketByID(token!!,idPacket!!)
 
+        packetViewModel.detailPacket.observe(this, {
+            Picasso.get().load("${getString(R.string.image_link)}${idPacket}.jpg").into(iv_poster_image_detail_packet)
+            desc_packet.text = it.packet_desc
+            porsi_packet.text = "/ ${it.packet_portion} Porsi"
+            currency(it.packet_price!!.toDouble(), idr_packet_detail)
+        })
+
         val gridRecyclerView = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         rc_paket.layoutManager = gridRecyclerView
 
@@ -45,15 +58,13 @@ class DetailPaketActivity : AppCompatActivity() {
             rc_paket.adapter = packetRecycleView
         })
 
-        order_btn.setOnClickListener{
-            val intent = Intent(this,NextOrderActivity::class.java)
-            intent.putExtra("idFood",idPacket)
-            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-            startActivity(intent)
-        }
+
+    }
 
 
-
-
+    fun currency(harga:Double, textView: TextView) {
+        val localeID = Locale("in", "ID")
+        val formatRupiah = NumberFormat.getCurrencyInstance(localeID)
+        textView.setText( formatRupiah.format(harga as Double))
     }
 }

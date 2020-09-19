@@ -19,38 +19,50 @@
         android:id="@+id/tv_nama"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
+        android:layout_marginStart="6dp"
         android:fontFamily="@font/poppins_regular"
         android:text="Weird Project"
         android:textColor="@color/orangeMain"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_profile"
         app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tv_saldo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:drawableStart="@drawable/ic_baseline_account_balance_wallet_24"
-            android:drawablePadding="10dp"
-            android:fontFamily="@font/poppins_regular"
-            android:text="Rp 0"
-            android:textColor="@color/colorBlack"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_nama" />
+    <TextView
+        android:id="@+id/tv_saldo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:drawableStart="@drawable/ic_baseline_account_balance_wallet_24"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Rp 0"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintStart_toStartOf="@+id/tv_nama"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nama" />
 
     <ImageView
         android:id="@+id/iv_profile"
         android:layout_width="65dp"
         android:layout_height="65dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="24dp"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/user_pic" />
+
+    <ImageView
+        android:id="@+id/iv_cart"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="35dp"
+        android:src="@drawable/ic_baseline_shopping_cart_24"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/user_pic" />
+        app:srcCompat="@drawable/ic_baseline_shopping_cart_24" />
 
 
     <androidx.core.widget.NestedScrollView
@@ -170,61 +182,11 @@
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_packet"
-                    android:layout_width="363dp"
-                    android:layout_height="233dp" />
-
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="160dp"
-                    android:layout_height="120dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_weight="1"
-                    app:cardBackgroundColor="@color/orangeThird"
-                    app:cardCornerRadius="15dp"
-                    app:cardElevation="2dp">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:padding="8dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="10dp"
-                            android:fontFamily="@font/poppins_regular"
-                            android:gravity="center_vertical"
-                            android:text="Paket\nSehat\nKu"
-                            android:textColor="@color/colorBlack"
-                            android:textSize="18dp" />
-
-                        <ImageView
-                            android:id="@+id/paketSehat"
-                            android:layout_width="wrap_content"
-                            android:layout_height="80dp"
-                            android:layout_alignParentRight="true"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginRight="10dp"
-                            android:src="@drawable/sehat_ku" />
-
-                    </RelativeLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="160dp"
-                    android:layout_height="120dp"
-                    android:layout_marginLeft="14dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    app:cardBackgroundColor="@color/orangeThird"
-                    app:cardCornerRadius="15dp"
-                    app:cardElevation="2dp">
+                    android:layout_width="385dp"
+                    android:layout_height="325dp"
+                    tools:listitem="@layout/row_packet"/>
 
 
-
-                </com.google.android.material.card.MaterialCardView>
 
 
             </LinearLayout>

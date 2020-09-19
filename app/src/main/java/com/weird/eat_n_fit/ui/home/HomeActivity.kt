@@ -6,6 +6,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.weird.eat_n_fit.R
+import com.weird.eat_n_fit.ui.home.cart.CartFragment
 import com.weird.eat_n_fit.ui.home.order.OrderFragment
 import com.weird.eat_n_fit.ui.home.settings.SettingsFragment
 import kotlinx.android.synthetic.main.activity_home.*
@@ -46,6 +47,7 @@ class HomeActivity : AppCompatActivity() {
         val fragmentOrder = OrderFragment()
         val fragmentSettings = SettingsFragment()
         val fragmentHome = DashboardFragment()
+        val cart = CartFragment()
 
         setFragment(fragmentHome)
 

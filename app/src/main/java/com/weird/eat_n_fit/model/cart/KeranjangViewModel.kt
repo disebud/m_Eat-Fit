@@ -7,11 +7,30 @@ import javax.inject.Inject
 class KeranjangViewModel  @Inject constructor (): ViewModel() {
     val cartList = mutableListOf<Keranjang>(Keranjang("a","as","d","d","sd","s"))
     val cartLiveData: MutableLiveData<MutableList<Keranjang>> = MutableLiveData(cartList)
+    val detail = mutableListOf<Keranjang>()
 
 
     fun addCartList(qty:String,productID:String,productName:String,userID:String, price:String,note:String){
         println("dari add model cart "+qty+productID+productName+userID+price+note)
         cartList.add(
+            Keranjang(
+                qty,
+                productID,
+                productName,
+                userID,
+                price,
+                note
+            )
+        )
+
+        cartLiveData.value = cartList
+
+        println("view model keranjang "+cartLiveData)
+    }
+
+    fun detailList(qty:String,productID:String,productName:String,userID:String, price:String,note:String){
+        println("dari add model cart "+qty+productID+productName+userID+price+note)
+        detail.add(
             Keranjang(
                 qty,
                 productID,

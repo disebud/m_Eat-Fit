@@ -11,6 +11,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.NavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.weird.eat_n_fit.model.user.User
 import com.weird.eat_n_fit.model.user.UserViewModel
@@ -30,6 +31,7 @@ import java.util.*
 
 class DashboardFragment : Fragment() {
     private lateinit var mAuth: FirebaseAuth
+    lateinit var navController: NavController
     private var sharedPreferences: SharedPreferences? = null
     private val userViewModel by activityViewModels<UserViewModel>()
     private var user: User = User()
@@ -105,6 +107,7 @@ class DashboardFragment : Fragment() {
 
         GetDataUser()
 
+
         }
 
 
@@ -138,11 +141,6 @@ class DashboardFragment : Fragment() {
             startActivity(intent)
         }
 
-        paketSehat.setOnClickListener{
-            val intent = Intent(activity, DetailPaketActivity::class.java
-            )
-            startActivity(intent)
-        }
 
     }
 

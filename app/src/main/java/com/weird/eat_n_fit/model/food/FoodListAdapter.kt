@@ -7,15 +7,21 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.os.bundleOf
+import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import com.weird.eat_n_fit.R
-import com.weird.eat_n_fit.ui.order.DetailMenuActivity
-import com.weird.eat_n_fit.ui.order.DetailPaketActivity
+import com.weird.eat_n_fit.ui.order.detailmenu.DetailActivity
+
+import com.weird.eat_n_fit.ui.order.detailmenu.DetailFragment
+
 import java.text.NumberFormat
 import java.util.*
 
 class FoodListAdapter (private val foodList: List<Food>):RecyclerView.Adapter<FoodViewHolder>() {
+
+    lateinit var navController: NavController
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FoodViewHolder {
         val view=
             LayoutInflater.from(parent.context).inflate(R.layout.row_food,parent,false)
@@ -24,6 +30,7 @@ class FoodListAdapter (private val foodList: List<Food>):RecyclerView.Adapter<Fo
 
     override fun onBindViewHolder(holder: FoodViewHolder, position: Int) {
         holder.nameFood.text = foodList[position].food_name
+
        // holder.price.text = foodList[position].food_price
         currency(foodList[position].food_price!!.toDouble(), holder.price)
         Picasso
@@ -33,7 +40,7 @@ class FoodListAdapter (private val foodList: List<Food>):RecyclerView.Adapter<Fo
         val activity = holder.itemView.context as Activity
 
         holder.itemView.setOnClickListener {
-            val intent = Intent(activity, DetailMenuActivity::class.java)
+            val intent = Intent(activity, DetailActivity::class.java)
             intent.putExtra("idFood", foodList[position].food_id)
             intent.putExtra("nameFood", foodList[position].food_name)
             intent.putExtra("price", foodList[position].food_price)
@@ -47,13 +54,16 @@ class FoodListAdapter (private val foodList: List<Food>):RecyclerView.Adapter<Fo
             activity.startActivity(intent)
         }
     }
+
+
+    override fun getItemCount(): Int {
+        return foodList.size
+    }
+
     fun currency(harga:Double, textView: TextView) {
         val localeID = Locale("in", "ID")
         val formatRupiah = NumberFormat.getCurrencyInstance(localeID)
         textView.setText(formatRupiah.format(harga as Double))
-    }
-    override fun getItemCount(): Int {
-        return foodList.size
     }
 }
 
