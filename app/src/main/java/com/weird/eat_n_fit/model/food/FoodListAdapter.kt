@@ -31,6 +31,7 @@ class FoodListAdapter (private val foodList: List<Food>):RecyclerView.Adapter<Fo
             .load("http://34.101.198.49:8082/images/${foodList[position].food_id}.jpg")
             .into(holder.foodImage)
         val activity = holder.itemView.context as Activity
+
         holder.itemView.setOnClickListener {
             val intent = Intent(activity, DetailMenuActivity::class.java)
             intent.putExtra("idFood", foodList[position].food_id)
@@ -42,6 +43,7 @@ class FoodListAdapter (private val foodList: List<Food>):RecyclerView.Adapter<Fo
             intent.putExtra("carbo", foodList[position].food_carbs)
             intent.putExtra("calories", foodList[position].food_calories)
             intent.putExtra("portion", foodList[position].food_portion)
+
             activity.startActivity(intent)
         }
     }

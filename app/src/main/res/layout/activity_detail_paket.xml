@@ -35,16 +35,26 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rc_paket"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="357dp"
+        android:layout_height="422dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="30dp"
-        android:layout_marginBottom="20dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_name_paket"
-        tools:listitem="@layout/row_detail_paket"/>
+        tools:listitem="@layout/row_detail_paket" />
+
+    <Button
+        android:id="@+id/order_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="order"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/rc_paket"
+        app:layout_constraintStart_toStartOf="@+id/rc_paket"
+        app:layout_constraintTop_toBottomOf="@+id/rc_paket" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

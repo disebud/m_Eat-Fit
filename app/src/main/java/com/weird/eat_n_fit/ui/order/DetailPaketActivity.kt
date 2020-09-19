@@ -1,6 +1,7 @@
 package com.weird.eat_n_fit.ui.order
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -38,11 +39,18 @@ class DetailPaketActivity : AppCompatActivity() {
         val gridRecyclerView = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         rc_paket.layoutManager = gridRecyclerView
 
-
+        println("data food ${packetViewModel.listFood}")
         packetViewModel.listFood.observe(this, Observer{
             packetRecycleView = DetailPacketAdapter(it)
             rc_paket.adapter = packetRecycleView
         })
+
+        order_btn.setOnClickListener{
+            val intent = Intent(this,NextOrderActivity::class.java)
+            intent.putExtra("idFood",idPacket)
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            startActivity(intent)
+        }
 
 
 
