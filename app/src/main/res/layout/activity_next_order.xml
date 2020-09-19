@@ -67,6 +67,10 @@
             android:textSize="18dp" />
 
         <NumberPicker
+            android:solidColor="@color/orangeMain"
+            android:outlineSpotShadowColor="@color/colorBlack"
+            android:outlineAmbientShadowColor="@color/colorBlack"
+            android:backgroundTint="@color/colorBlack"
             android:id="@+id/porsi_numberpicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -178,6 +182,7 @@
             android:textSize="18dp" />
 
         <NumberPicker
+            android:solidColor="@color/orangeMain"
             android:id="@+id/time_numberpicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

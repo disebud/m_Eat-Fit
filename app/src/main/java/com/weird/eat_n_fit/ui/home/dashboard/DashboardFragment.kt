@@ -138,11 +138,6 @@ class DashboardFragment : Fragment() {
             startActivity(intent)
         }
 
-        paketSehat.setOnClickListener{
-            val intent = Intent(activity, DetailPaketActivity::class.java
-            )
-            startActivity(intent)
-        }
 
     }
 

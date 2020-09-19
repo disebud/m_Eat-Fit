@@ -20,19 +20,21 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/iv_img_menu"
-        android:layout_width="350dp"
+        android:layout_width="330dp"
         android:layout_height="200dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="50dp"
-        app:cardCornerRadius="10dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="43dp"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_poster">
 
         <ImageView
-            android:id="@+id/iv_poster_image"
-            android:layout_width="100dp"
-            android:layout_height="70dp"
+            android:id="@+id/iv_poster_image_detail_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:scaleType="centerCrop" />
     </com.google.android.material.card.MaterialCardView>
 
@@ -40,11 +42,12 @@
         android:id="@+id/tv_nama_menu_selected"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="@font/poppins_bold"
-        android:text="Acara Ulang Tahun"
+        android:text="Nama Menu"
+        android:textAlignment="center"
         android:textColor="@color/colorBlack"
-        android:textSize="20sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,12 +58,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_regular"
-        android:text="Rp.10.000"
+        android:text="Rp.0"
         android:textColor="@color/orangeMain"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tv_nama_menu_selected"
+        app:layout_constraintStart_toStartOf="@+id/tv_nama_menu_selected"
         app:layout_constraintTop_toBottomOf="@+id/tv_nama_menu_selected" />
 
     <TextView
@@ -68,7 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_regular"
-        android:text="minimal 20 porsi"
+        android:text="minimal 1 porsi"
         android:textColor="@color/colorBlack"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -76,35 +79,416 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_idr_menu_selected" />
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/DetailMenutRecycleView"
-        android:layout_width="374dp"
-        android:layout_height="260dp"
-        android:layout_marginTop="8dp"
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/DetailMenutRecycleView"-->
+<!--        android:layout_width="374dp"-->
+<!--        android:layout_height="260dp"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/tv_porsi_menu_selected" />-->
+
+
+    <LinearLayout
+        android:id="@+id/ln_scrool"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_porsi_menu_selected" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_porsi_menu_selected">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="220dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@color/orangeThird"
+                    android:orientation="horizontal">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/title_desc_menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/orangeFourth"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/ln_scrool">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="16dp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="Description "
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/colorBlack"></View>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/val_desc_menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginEnd="22dp"
+                    android:background="@color/orangeThird"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="Kami menyediakan 7 jenis hidangan dalam paket ulang tahun. \nDengan jumlah porsi minimal pemesanan yakni 50 porsi. Anda dapat melihat total Takaran AKG yang terkandung dalam paket ini. \nTakaran AKG tersebut dihitung dari setiap 1 porsi hidangan yang tertera dalam daftar. Harga yang tertera untuk 50 porsi"
+                    android:textAlignment="center"
+                    android:textSize="14dp" />
+
+                <LinearLayout
+                    android:id="@+id/title_akg_menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/orangeFourth"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/ln_scrool">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="16dp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="Detail AKG "
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@color/colorBlack"></View>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/colorBlack"></View>
+
+                <LinearLayout
+                    android:id="@+id/ln_cal_menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginEnd="22dp"
+                    android:background="@color/orangeThird"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="359dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="Kalori"
+                        android:textAlignment="inherit"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/val_cal"
+                        android:layout_width="241dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="0"
+                        android:textAlignment="inherit"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="272dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="gram"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/colorBlack"></View>
+
+                <LinearLayout
+                    android:id="@+id/ln_fat"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginEnd="22dp"
+                    android:background="@color/orangeThird"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="359dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="Lemak"
+                        android:textAlignment="inherit"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/val_fat"
+                        android:layout_width="241dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="0"
+                        android:textAlignment="inherit"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="272dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="gram"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/colorBlack"></View>
+
+                <LinearLayout
+                    android:id="@+id/ln_carbo"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginEnd="22dp"
+                    android:background="@color/orangeThird"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="359dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="Karbohidrat"
+                        android:textAlignment="inherit"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/val_carbs"
+                        android:layout_width="241dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="0"
+                        android:textAlignment="inherit"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="272dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="gram"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/colorBlack"></View>
+
+                <LinearLayout
+                    android:id="@+id/ln_protein"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginEnd="22dp"
+                    android:background="@color/orangeThird"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="359dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="Protein"
+                        android:textAlignment="inherit"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/val_protein"
+                        android:layout_width="241dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="0"
+                        android:textAlignment="inherit"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/porsi_packet"
+                        android:layout_width="272dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="gram"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/colorBlack"></View>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
 
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_order_menu"
+
+
+    <LinearLayout
+        android:id="@+id/ln_order_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="10dp"
-        android:backgroundTint="@color/orangeSecond"
-        android:fontFamily="@font/poppins_regular"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:text="ORDER"
-        android:textColor="@color/colorWhite"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:cornerRadius="20dp"
+        android:background="@color/orangeFourth"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Porsi"
+            android:textAlignment="center"
+            android:layout_weight="3"
+            android:textColor="@color/colorBlack"
+            android:textSize="18dp" />
+
+        <NumberPicker
+            android:solidColor="@color/orangeMain"
+            android:outlineSpotShadowColor="@color/colorBlack"
+            android:outlineAmbientShadowColor="@color/colorBlack"
+            android:backgroundTint="@color/colorBlack"
+            android:id="@+id/porsi_numberpicker"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="3"></NumberPicker>
+
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_weight="2"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:id="@+id/btn_order_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/orangeSecond"
+            android:fontFamily="@font/poppins_regular"
+            android:text="+ KEranjang"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:cornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </LinearLayout>
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

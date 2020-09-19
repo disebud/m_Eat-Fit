@@ -5,21 +5,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DD9223"
+    android:background="@color/orangeThird"
     android:padding="16dp"
     tools:context=".ui.qrcode.ScanqrActivity">
-
-
 
 
     <TextView
         android:id="@+id/text_view_qr_code_value"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
         android:text="QR Code Value"
         android:textSize="18sp"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guideline" />
@@ -32,14 +30,13 @@
         app:layout_constraintGuide_percent="0.8" />
 
     <Button
+        android:id="@+id/button_reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button_reset"
         android:text="Reset"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_qr_code_value"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/text_view_qr_code_value" />
 
     <FrameLayout
         android:id="@+id/frame_layout_camera"

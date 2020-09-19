@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/row_cart"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical">
+
+<LinearLayout
+    android:layout_margin="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="190dp"
+    android:orientation="vertical"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_weight="1"
+        android:id="@+id/iv_container"
+        app:cardBackgroundColor="#FFE79F"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="10dp"
+        android:layout_gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/iv_poster"
+            android:layout_marginStart="24dp"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="16dp"
+            android:gravity="top"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="10dp"
+
+            app:srcCompat="@drawable/ic_poster">
+
+            <ImageView
+                android:id="@+id/iv_poster_image"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop" />
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_nama_menu_order"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="top"
+            android:textColor="@color/colorBlack"
+            android:textSize="16sp"
+            tools:text="Nama Paket" />
+
+
+            <TextView
+                android:id="@+id/tv_price_menu_order"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="top"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp"
+                tools:text="Rp.0" />
+
+            <TextView
+                android:id="@+id/tv_porsi_menu_order"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="top"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp"
+                tools:text="0 Porsi" />
+
+            <TextView
+                android:id="@+id/tv_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_gravity="bottom"
+                android:drawableLeft="@drawable/ic_star_yellow_24dp"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="8"
+                android:textColor="@color/colorBlack" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="15dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+          <com.google.android.material.button.MaterialButton
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center_horizontal"
+              android:text="Remove"
+              android:fontFamily="@font/poppins_regular"
+              android:textColor="@color/colorWhite"
+              android:backgroundTint="@color/orangeMain"
+              />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

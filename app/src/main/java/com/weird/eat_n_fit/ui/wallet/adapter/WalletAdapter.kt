@@ -52,7 +52,7 @@ class WalletAdapter(private var data: List<TransactionWallet>, private val liste
 
 
             if (data.balhistory_type == "1"){
-                tvMoney.text = "+ "+formatRupiah.format(data.amount.toDouble())
+                tvMoney.text = "  + "+formatRupiah.format(data.amount.toDouble())+"  "
                 tvMoney.setTextColor(Color.GREEN)
             } else {
                 tvMoney.text = "- "+formatRupiah.format(data.amount.toDouble())

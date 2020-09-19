@@ -71,7 +71,7 @@ class ScanqrActivity : AppCompatActivity(),ZXingScannerView.ResultHandler, View.
     }
 
     private fun initDefaultView() {
-        text_view_qr_code_value.text = "QR Code Value"
+        text_view_qr_code_value.text = ""
         button_reset.visibility = View.GONE
     }
 
