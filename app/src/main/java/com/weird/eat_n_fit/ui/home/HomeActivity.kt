@@ -3,14 +3,12 @@ package com.weird.eat_n_fit.ui.home
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.weird.eat_n_fit.R
-import com.weird.eat_n_fit.ui.home.cart.CartFragment
+import com.weird.eat_n_fit.ui.order.detailmenu.cart.CartFragment
 import com.weird.eat_n_fit.ui.home.order.OrderFragment
 import com.weird.eat_n_fit.ui.home.settings.SettingsFragment
 import kotlinx.android.synthetic.main.activity_home.*
-import kotlinx.android.synthetic.main.fragment_dashboard.*
 
 class HomeActivity : AppCompatActivity() {
 

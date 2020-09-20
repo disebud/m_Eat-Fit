@@ -1,12 +1,17 @@
 package com.weird.eat_n_fit.ui.order.detailmenu
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.weird.eat_n_fit.R
+import com.weird.eat_n_fit.model.cart.Keranjang
+import com.weird.eat_n_fit.model.cart.KeranjangViewModel
+import com.weird.eat_n_fit.model.food.Food
 
 
 class DetailActivity : AppCompatActivity() {
 
+    val cartViewModel by viewModels<KeranjangViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,21 +26,8 @@ class DetailActivity : AppCompatActivity() {
         val calories= intent.getStringExtra("calories")
         val portion = intent.getStringExtra("portion")
 
-//        var bundle=Bundle()
-//        bundle.putString("name",namaFood)
-//        var frag=DetailFragment()
-//        frag.arguments=bundle
-
-        val bundle = Bundle()
-        val myMessage = "Stack Overflow is cool!"
-        bundle.putString("message", myMessage)
-        val fragInfo = DetailFragment()
-        fragInfo.setArguments(bundle)
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.detailFragment,fragInfo)
-        transaction.commit()
-        println(fragInfo)
-
+        cartViewModel.detailFood.add(Food(idFood!!,portion!!,namaFood!!,calories!!,fat!!,carbo!!,proteiin!!,price!!,desc!!))
+        println(cartViewModel.detailFood)
     }
 
 
