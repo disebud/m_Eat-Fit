@@ -28,6 +28,7 @@ class DetailPaketActivity : AppCompatActivity() {
     private var sharedPreferences: SharedPreferences? = null
     val packetViewModel by viewModels<PacketViewModel>()
     lateinit var packetRecycleView : DetailPacketAdapter
+    var price =""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_paket)
@@ -47,6 +48,7 @@ class DetailPaketActivity : AppCompatActivity() {
             desc_packet.text = it.packet_desc
             porsi_packet.text = "/ ${it.packet_portion} Porsi"
             currency(it.packet_price!!.toDouble(), idr_packet_detail)
+            price=it.packet_price
         })
 
         val gridRecyclerView = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
@@ -60,7 +62,7 @@ class DetailPaketActivity : AppCompatActivity() {
 
         order_packet.setOnClickListener {
             val intent = Intent(this, NextOrderActivity::class.java)
-            intent.putExtra("idPacket",idPacket)
+            intent.putExtra("idPacket",idPacket).putExtra("price",price).putExtra("namaPacket",namaPacket)
             overridePendingTransition( R.anim.slide_in_right,R.anim.slide_out_left);
             startActivity(intent)
         }
