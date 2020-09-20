@@ -1,7 +1,9 @@
 package com.weird.eat_n_fit.ui.order
 
 import android.app.DatePickerDialog
+import android.app.TimePickerDialog
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Build
@@ -21,6 +23,7 @@ import com.weird.eat_n_fit.model.food.FoodViewModel
 import com.weird.eat_n_fit.model.order.OrderFoodPacket
 import com.weird.eat_n_fit.model.order.OrderViewModel
 import com.weird.eat_n_fit.model.signin.UserSignInModel
+import com.weird.eat_n_fit.ui.home.HomeActivity
 import com.weird.eat_n_fit.ui.utils.DatePickerHelper
 import kotlinx.android.synthetic.main.activity_next_order.*
 import okhttp3.internal.format
@@ -32,11 +35,10 @@ class NextOrderActivity : AppCompatActivity() {
     val orderViewModel by viewModels<OrderViewModel>()
     var button_date: Button? = null
     var textview_date: TextView? = null
+
     var cal = Calendar.getInstance()
     lateinit var picker1: NumberPicker
-    lateinit var picker2: NumberPicker
-    lateinit var pickerVals: Array<Int>
-    lateinit var pickerVals2: Array<String>
+
     private var sharedPreferences: SharedPreferences? = null
     @RequiresApi(Build.VERSION_CODES.Q)
     lateinit var datePicker: DatePickerHelper
@@ -50,7 +52,7 @@ class NextOrderActivity : AppCompatActivity() {
         )
         val iduser = sharedPreferences?.getString(getString(R.string.user_id), "")
         val token = sharedPreferences?.getString(getString(R.string.auth_token), "")
-        val idFood = intent.getStringExtra("idFood")
+        val idFood = intent.getStringExtra("idPacket")
         // get the references from layout file
         textview_date = this.text_view_date_1
         button_date = this.button_date_1
@@ -59,9 +61,19 @@ class NextOrderActivity : AppCompatActivity() {
         button_date_1.setOnClickListener {
             showDatePickerDialog()
         }
+        val button_time_1 = findViewById<Button>(R.id.button_time_1)
+        val time     = findViewById<TextView>(R.id.text_view_time_1)
+        button_time_1.setOnClickListener{
+            val cal = Calendar.getInstance()
+            val timeSetListener = TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
+                cal.set(Calendar.HOUR_OF_DAY, hour)
+                cal.set(Calendar.MINUTE, minute)
+                time.text = SimpleDateFormat("HH:mm:ss").format(cal.time)
+            }
+            TimePickerDialog(this, timeSetListener, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
+        }
 
         picker1 = findViewById(R.id.porsi_numberpicker)
-        picker2 = findViewById(R.id.time_numberpicker)
         picker1.setMaxValue(1000)
         picker1.setMinValue(1)
 
@@ -70,33 +82,22 @@ class NextOrderActivity : AppCompatActivity() {
             java.lang.String.valueOf(valuePicker1)
         System.out.println("Persentase Api: " + update);
 
-//        pickerVals = arrayOf(20, 30, 50, 75, 100, 125, 150, 200, 300, 400, 500, 750, 1000)
-        pickerVals2 = arrayOf("Breakfast", "Lunch", "Dinner")
-
-//        picker1.setDisplayedValues(pickerVals)
-//        picker1.setOnValueChangedListener(OnValueChangeListener { numberPicker, i, i1 ->
-//            val valuePicker1 = picker1.getValue()
-//            Log.d("picker value", pickerVals[valuePicker1])
-//        })
-
-        picker2.setDisplayedValues(pickerVals2)
-        picker2.setOnValueChangedListener(OnValueChangeListener { numberPicker, i, i1 ->
-            val valuePicker2 = picker2.getValue()
-            Log.d("picker value", pickerVals2[valuePicker2])
-        })
 
 
         btn_next_order.setOnClickListener {
             val porsi = porsi_numberpicker.value.toString()
             val tanggal = text_view_date_1.text.toString()
-            val waktu = time_numberpicker.value.toString()
+            val waktu = text_view_time_1.text.toString()
             val alamat = Alamat.text.toString()
             var order = OrderFoodPacket(iduser!!,idFood!!,porsi,tanggal,waktu,alamat)
             println(idFood)
             println(token)
             println(iduser)
-
             orderViewModel.orderFoodPacket(token!!,order)
+            val intent = Intent(this,HomeActivity::class.java)
+            overridePendingTransition( R.anim.slide_in_right,R.anim.slide_out_left);
+            startActivity(intent)
+            finish()
         }
 
     }

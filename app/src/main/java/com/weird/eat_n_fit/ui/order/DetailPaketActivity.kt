@@ -58,6 +58,12 @@ class DetailPaketActivity : AppCompatActivity() {
             rc_paket.adapter = packetRecycleView
         })
 
+        order_packet.setOnClickListener {
+            val intent = Intent(this, NextOrderActivity::class.java)
+            intent.putExtra("idPacket",idPacket)
+            overridePendingTransition( R.anim.slide_in_right,R.anim.slide_out_left);
+            startActivity(intent)
+        }
 
     }
 
