@@ -1,5 +1,6 @@
 package com.weird.eat_n_fit.ui.wallet.transaction
 
+import android.icu.text.CaseMap
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
@@ -21,7 +22,8 @@ class TransactionWallet(
 )
 
 class Amount(
-    val amount: String = ""
+    val amount: String = "",
+    val title: String=""
 )
 
 class RespAmount (

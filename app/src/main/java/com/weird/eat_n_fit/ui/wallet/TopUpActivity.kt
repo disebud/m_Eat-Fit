@@ -89,6 +89,43 @@ class TopUpActivity : AppCompatActivity() {
             }
         }
 
+        tv_250k.setOnClickListener {
+            if (status250K) {
+                deselectMoney(tv_250k)
+            } else {
+                selectMoney(tv_250k)
+            }
+        }
+
+        tv_500k.setOnClickListener {
+            if (status500K) {
+                deselectMoney(tv_500k)
+            } else {
+                selectMoney(tv_500k)
+            }
+        }
+        tv_750k.setOnClickListener {
+            if (status750K) {
+                deselectMoney(tv_750k)
+            } else {
+                selectMoney(tv_750k)
+            }
+        }
+        tv_1000k.setOnClickListener {
+            if (status1000K) {
+                deselectMoney(tv_1000k)
+            } else {
+                selectMoney(tv_1000k)
+            }
+        }
+        tv_2500k.setOnClickListener {
+            if (status2500K) {
+                deselectMoney(tv_2500k)
+            } else {
+                selectMoney(tv_2500k)
+            }
+        }
+
         et_amount.addTextChangedListener(object : TextWatcher {
             override fun onTextChanged(
                 s: CharSequence,
@@ -111,13 +148,45 @@ class TopUpActivity : AppCompatActivity() {
                     } else {
                         tv_100k.setTextColor(resources.getColor(R.color.colorBlack))
                         tv_100k.setBackgroundResource(R.drawable.shape_line_white)
+                        tv_250k.setTextColor(resources.getColor(R.color.colorBlack))
+                        tv_250k.setBackgroundResource(R.drawable.shape_line_white)
+                        tv_500k.setTextColor(resources.getColor(R.color.colorBlack))
+                        tv_500k.setBackgroundResource(R.drawable.shape_line_white)
+                        tv_750k.setTextColor(resources.getColor(R.color.colorBlack))
+                        tv_750k.setBackgroundResource(R.drawable.shape_line_white)
+                        tv_1000k.setTextColor(resources.getColor(R.color.colorBlack))
+                        tv_1000k.setBackgroundResource(R.drawable.shape_line_white)
+                        tv_2500k.setTextColor(resources.getColor(R.color.colorBlack))
+                        tv_2500k.setBackgroundResource(R.drawable.shape_line_white)
                         status100K = false
+                        status250K=false
+                        status500K  = false
+                        status750K  = false
+                        status1000K  = false
+                        status2500K  = false
+                        tv_250k.setTextColor(resources.getColor(R.color.colorBlack))
+                        tv_250k.setBackgroundResource(R.drawable.shape_line_white)
                         btn_top_up2.visibility = View.INVISIBLE
                     }
                 } catch (e : NumberFormatException) {
                     tv_100k.setTextColor(resources.getColor(R.color.colorBlack))
                     tv_100k.setBackgroundResource(R.drawable.shape_line_white)
+                    tv_250k.setTextColor(resources.getColor(R.color.colorBlack))
+                    tv_250k.setBackgroundResource(R.drawable.shape_line_white)
+                    tv_500k.setTextColor(resources.getColor(R.color.colorBlack))
+                    tv_500k.setBackgroundResource(R.drawable.shape_line_white)
+                    tv_750k.setTextColor(resources.getColor(R.color.colorBlack))
+                    tv_750k.setBackgroundResource(R.drawable.shape_line_white)
+                    tv_1000k.setTextColor(resources.getColor(R.color.colorBlack))
+                    tv_1000k.setBackgroundResource(R.drawable.shape_line_white)
+                    tv_2500k.setTextColor(resources.getColor(R.color.colorBlack))
+                    tv_2500k.setBackgroundResource(R.drawable.shape_line_white)
                     status100K = false
+                    status250K=false
+                    status500K  = false
+                    status750K  = false
+                    status1000K  = false
+                    status2500K  = false
                     btn_top_up2.visibility = View.INVISIBLE
                 }
             }
@@ -130,7 +199,8 @@ class TopUpActivity : AppCompatActivity() {
             val token = sharedPreferences?.getString(getString(R.string.auth_token), "")
             val et_amout = et_amount.text.toString()
             println( "ini adalah inputan = ${et_amout}" )
-            transactionViewModel.PostTopUp(token!!,Amount(amount = et_amount.text.toString()),id = idUser)
+            val topUp = Amount(et_amout,"topUp")
+            transactionViewModel.PostTopUp(token!!,topUp, id = idUser)
             startActivity(Intent(this, SuccessTopUpActivity::class.java))
             overridePendingTransition( R.anim.slide_in_right,R.anim.slide_out_left);
             finish()
@@ -141,19 +211,65 @@ class TopUpActivity : AppCompatActivity() {
     private fun selectMoney(textView: TextView){
         textView.setTextColor(resources.getColor(R.color.orangeThird))
         textView.setBackgroundResource(R.drawable.shape_line_pink)
-        status100K = true
 
-        btn_top_up2.visibility = View.VISIBLE
-        et_amount.setText("100000")
+        if (tv_100k == textView){
+            status100K = true
+            btn_top_up2.visibility = View.VISIBLE
+            et_amount.setText("100000")
+        }else if (tv_250k == textView){
+            status250K= true
+            btn_top_up2.visibility = View.VISIBLE
+            et_amount.setText("250000")
+        }else if (tv_500k == textView){
+            status500K= true
+            btn_top_up2.visibility = View.VISIBLE
+            et_amount.setText("500000")
+        }else if (tv_750k == textView){
+            status750K= true
+            btn_top_up2.visibility = View.VISIBLE
+            et_amount.setText("750000")
+        }else if (tv_1000k == textView){
+            status1000K= true
+            btn_top_up2.visibility = View.VISIBLE
+            et_amount.setText("1000000")
+        }else if (tv_2500k == textView){
+            status2500K= true
+            btn_top_up2.visibility = View.VISIBLE
+            et_amount.setText("2500000")
+        }
+
+
     }
 
     private fun deselectMoney(textView: TextView){
         textView.setTextColor(resources.getColor(R.color.colorWhite))
         textView.setBackgroundResource(R.drawable.shape_line_white)
-        status100K = false
+        if (tv_100k == textView){
+            status100K = false
+            btn_top_up2.visibility = View.INVISIBLE
+            et_amount.setText("")
+        }else if (tv_250k == textView){
+            status250K= false
+            btn_top_up2.visibility = View.INVISIBLE
+            et_amount.setText("")
+        }else if (tv_500k == textView){
+            status500K= false
+            btn_top_up2.visibility = View.INVISIBLE
+            et_amount.setText("")
+        }else if (tv_750k == textView){
+            status750K= false
+            btn_top_up2.visibility = View.INVISIBLE
+            et_amount.setText("")
+        }else if (tv_1000k == textView){
+            status1000K= false
+            btn_top_up2.visibility = View.INVISIBLE
+            et_amount.setText("")
+        }else if (tv_2500k == textView){
+            status2500K= false
+            btn_top_up2.visibility = View.INVISIBLE
+            et_amount.setText("")
+        }
 
-        btn_top_up2.visibility = View.INVISIBLE
-        et_amount.setText("")
     }
 
     fun currecy(harga:Double, textView: TextView) {
