@@ -13,4 +13,7 @@ interface OrderAPI {
     @POST("/transactions")
     fun inputOrder(@Header("Authorization") token : String,@Body orderFood: OrderFoodPacket): Call<ResponseOrder>
 
+    @GET("/transactions/users/{id}")
+    fun TransactionUser(@Header("Authorization") token : String,@Path("id") id: String): Call<List<TransactionUserList>>
+
 }

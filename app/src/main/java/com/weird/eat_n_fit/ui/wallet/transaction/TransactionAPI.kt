@@ -16,5 +16,6 @@ interface TransactionAPI {
 
     @POST("topup/{id}")
     fun PostTopUp  (@Header("Authorization") token : String, @Body amount: Amount, @Path("id") id: String): Call<RespAmount>
-
+    @POST("wallet/minus/{id}")
+    fun MinTopUp  (@Header("Authorization") token : String, @Body amount: Amount, @Path("id") id: String): Call<RespAmount>
 }

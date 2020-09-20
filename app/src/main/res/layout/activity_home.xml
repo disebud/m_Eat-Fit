@@ -43,6 +43,13 @@
             android:src="@drawable/ic_order_not_active" />
 
         <ImageView
+            android:id="@+id/scanqr"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/scanqr" />
+
+        <ImageView
             android:id="@+id/iv_menu3"
             android:layout_width="0dp"
             android:layout_height="match_parent"

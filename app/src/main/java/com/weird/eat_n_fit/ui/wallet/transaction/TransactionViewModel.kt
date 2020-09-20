@@ -17,4 +17,5 @@ class TransactionViewModel : ViewModel() {
     fun TransactionWalletList(token: String,id: String) = transactionRepository.TransactionWalletList(token,id)
 
     fun PostTopUp(token: String,amount: Amount,id: String) = transactionRepository.PostTopUp(token,amount, id)
+    fun MinTopUp(token: String,amount: Amount,id: String) = transactionRepository.MinTopUp(token,amount, id)
 }

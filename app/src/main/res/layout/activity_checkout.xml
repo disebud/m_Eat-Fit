@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:background="@drawable/order_flat"
-tools:context=".ui.order.CheckoutActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/order_flat"
+    tools:context=".ui.order.CheckoutActivity">
 
-<ImageView
-    android:id="@+id/back_next_order"
-    android:layout_width="52dp"
-    android:layout_height="49dp"
-    android:layout_marginStart="8dp"
-    android:layout_marginTop="8dp"
-    android:src="@drawable/back"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:srcCompat="@drawable/back" />
+    <ImageView
+        android:id="@+id/back_next_order"
+        android:layout_width="52dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back" />
 
 
-<TextView
-    android:id="@+id/title_checkout"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="60dp"
-    android:fontFamily="@font/poppins_bold"
-    android:gravity="center"
-    android:text="CHECKOUT"
-    android:textColor="@color/colorBlack"
-    android:textSize="25sp"
-    android:textStyle="bold"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/title_checkout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:text="CHECKOUT"
+        android:textColor="@color/colorBlack"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/title_to"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="25dp"
         android:layout_marginStart="22dp"
         android:background="@color/orangeThird"
@@ -51,7 +51,7 @@ tools:context=".ui.order.CheckoutActivity">
             android:layout_gravity="center"
             android:layout_marginStart="16dp"
             android:fontFamily="@font/poppins_bold"
-            android:text="TO "
+            android:text="UNTUK "
             android:textColor="@color/colorBlack"
             android:textSize="22dp" />
 
@@ -65,95 +65,97 @@ tools:context=".ui.order.CheckoutActivity">
 
     </LinearLayout>
 
-<LinearLayout
-    android:id="@+id/ln_date_ck"
-    android:layout_width="match_parent"
-    android:layout_height="60dp"
-    android:layout_marginEnd="25dp"
-    android:layout_marginStart="22dp"
-    android:background="@color/orangeFourth"
-    android:orientation="horizontal"
-    app:layout_constraintTop_toBottomOf="@+id/title_to">
-
-    <ImageView
-        android:layout_width="60dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="5dp"
-        android:src="@drawable/ic_baseline_timer_24" />
-
     <LinearLayout
-        android:id="@+id/ln_date_checkout"
-        android:layout_width="31dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="8dp"
+        android:id="@+id/ln_date_ck"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
         android:layout_marginEnd="25dp"
-        android:layout_marginBottom="5dp"
-        android:layout_weight="1"
+        android:layout_marginStart="22dp"
         android:background="@color/orangeFourth"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/title_to">
 
-        <TextView
-            android:id="@+id/tv_date_ck"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/poppins_regular"
-            android:text="Date"
-            android:textColor="@color/colorBlack"
-            android:textSize="15dp" />
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/ic_baseline_timer_24" />
 
-        <TextView
-            android:id="@+id/tv_time_ck"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/ln_date_checkout"
+            android:layout_width="31dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="5dp"
             android:layout_weight="1"
-            android:fontFamily="@font/poppins_regular"
-            android:text="Time"
-            android:textColor="@color/colorBlack"
-            android:textSize="15dp" />
+            android:background="@color/orangeFourth"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_date_ck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Tanggal"
+                android:textColor="@color/colorBlack"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/tv_time_ck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Waktu"
+                android:textColor="@color/colorBlack"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ln_result_date_checkout"
+            android:layout_width="131dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:background="@color/orangeFourth"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_result_date_ck"
+                android:layout_width="165dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="1"
+                android:textAlignment="textEnd"
+                android:fontFamily="@font/poppins_bold"
+                android:text="20,September 2020"
+                android:textColor="@color/colorBlack"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/tv_result_time_ck"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:textAlignment="textEnd"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_bold"
+                android:text="20:00"
+                android:textColor="@color/colorBlack"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+
 
     </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/ln_result_date_checkout"
-        android:layout_width="131dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="5dp"
-        android:layout_weight="1"
-        android:background="@color/orangeFourth"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/tv_result_date_ck"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/poppins_bold"
-            android:layout_gravity="end"
-            android:text="20,September 2020"
-            android:textColor="@color/colorBlack"
-            android:textSize="15dp" />
-
-        <TextView
-            android:id="@+id/tv_result_time_ck"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_weight="1"
-            android:fontFamily="@font/poppins_bold"
-            android:text="Dinner"
-            android:textColor="@color/colorBlack"
-            android:textSize="15dp" />
-
-    </LinearLayout>
-
-
-</LinearLayout>
 
     <LinearLayout
         android:id="@+id/title_items"
@@ -208,7 +210,6 @@ tools:context=".ui.order.CheckoutActivity">
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginStart="8dp"
-            android:layout_marginEnd="25dp"
             android:layout_marginBottom="5dp"
             android:layout_weight="1"
             android:background="@color/orangeFourth"
@@ -216,14 +217,14 @@ tools:context=".ui.order.CheckoutActivity">
 
             <TextView
                 android:id="@+id/tv_item_name"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginTop="5dp"
+                android:layout_weight="1"
                 android:fontFamily="@font/poppins_regular"
-                android:text="Acara Ulang Tahun"
+                android:text="Paket Acara Ulang Tahun"
                 android:textColor="@color/colorBlack"
-                android:textSize="12dp" />
+                android:textSize="10.5dp" />
 
             <TextView
                 android:id="@+id/tv_porsi_ck"
@@ -232,7 +233,7 @@ tools:context=".ui.order.CheckoutActivity">
                 android:layout_weight="1"
                 android:layout_marginTop="4dp"
                 android:fontFamily="@font/poppins_regular"
-                android:text="Porsi"
+                android:text="Jumlah Paket"
                 android:textColor="@color/colorBlack"
                 android:textSize="12dp" />
 
@@ -251,9 +252,10 @@ tools:context=".ui.order.CheckoutActivity">
 
             <TextView
                 android:id="@+id/tv_idr_ck"
-                android:layout_width="wrap_content"
+                android:layout_width="101dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
+                android:textAlignment="textEnd"
                 android:layout_weight="1"
                 android:fontFamily="@font/poppins_bold"
                 android:text="Rp.10.000"
@@ -262,12 +264,13 @@ tools:context=".ui.order.CheckoutActivity">
 
             <TextView
                 android:id="@+id/tv_porsi_idr_ck"
-                android:layout_width="wrap_content"
+                android:layout_width="99dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_weight="1"
+                android:textAlignment="textEnd"
                 android:fontFamily="@font/poppins_bold"
-                android:text="100"
+                android:text="1 / 50 Porsi"
                 android:textColor="@color/colorBlack"
                 android:textSize="15dp" />
 
@@ -312,34 +315,34 @@ tools:context=".ui.order.CheckoutActivity">
     </LinearLayout>
 
     <LinearLayout
-    android:id="@+id/title_payment"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginEnd="25dp"
-    android:layout_marginStart="22dp"
-    android:background="@color/orangeThird"
-    android:orientation="horizontal"
-    app:layout_constraintTop_toBottomOf="@+id/ln_totals">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="16dp"
-        android:fontFamily="@font/poppins_bold"
-        android:text="Payment "
-        android:textColor="@color/colorBlack"
-        android:textSize="22dp" />
-
-    <View
+        android:id="@+id/title_payment"
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/colorBlack"></View>
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:layout_marginStart="22dp"
+        android:background="@color/orangeThird"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/ln_totals">
 
-</LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Payment "
+            android:textColor="@color/colorBlack"
+            android:textSize="22dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/colorBlack"></View>
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/ln_wallet"
@@ -360,7 +363,7 @@ tools:context=".ui.order.CheckoutActivity">
 
         <LinearLayout
             android:id="@+id/ln_wallet_balance"
-            android:layout_width="11dp"
+            android:layout_width="7dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="5dp"
@@ -394,7 +397,7 @@ tools:context=".ui.order.CheckoutActivity">
 
         <LinearLayout
             android:id="@+id/ln_real_balance"
-            android:layout_width="33dp"
+            android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="25dp"
@@ -405,7 +408,7 @@ tools:context=".ui.order.CheckoutActivity">
 
             <TextView
                 android:id="@+id/tv_real_balance"
-                android:layout_width="120dp"
+                android:layout_width="142dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_weight="1"
@@ -414,6 +417,19 @@ tools:context=".ui.order.CheckoutActivity">
                 android:textAlignment="textEnd"
                 android:textColor="@color/colorBlack"
                 android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/saldo_tidak_cukup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textAlignment="textEnd"
+                android:visibility="invisible"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Saldo Tidak Cukup"
+                android:textColor="#FF0F0F"
+                android:textSize="12dp" />
 
         </LinearLayout>
 
@@ -459,7 +475,8 @@ tools:context=".ui.order.CheckoutActivity">
         android:layout_marginStart="22dp"
         android:background="@color/orangeFourth"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/title_address">
+        app:layout_constraintTop_toBottomOf="@+id/title_address"
+        tools:layout_editor_absoluteX="22dp">
 
         <ImageView
             android:layout_width="60dp"
@@ -482,13 +499,13 @@ tools:context=".ui.order.CheckoutActivity">
 
             <TextView
                 android:id="@+id/tv_content_address"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/poppins_regular"
-                android:text="Bekasi,Indonesia\nKayuringin Jaya"
+                android:text="Bekasi,Indonesia,-Kayuringin Jaya"
                 android:textColor="@color/colorBlack"
-                android:textSize="18dp" />
+                android:textSize="13dp" />
 
         </LinearLayout>
 
@@ -509,27 +526,55 @@ tools:context=".ui.order.CheckoutActivity">
         android:textSize="18sp"
         android:textStyle="bold"
         app:cornerRadius="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_cancel_order"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ln_address" />
 
-<com.google.android.material.button.MaterialButton
-    android:id="@+id/btn_cancel_order"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="32dp"
-    android:layout_marginEnd="32dp"
-    android:layout_marginBottom="10dp"
-    android:backgroundTint="@color/orangeFourth"
-    android:fontFamily="@font/poppins_regular"
-    android:text="cancel"
-    android:textColor="@color/colorWhite"
-    android:textSize="18sp"
-    android:textStyle="bold"
-    app:cornerRadius="20dp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/btn_payment_order">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_topUp_order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/orangeMain"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Top Up"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:cornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_cancel_order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/orangeFourth"
+            android:fontFamily="@font/poppins_regular"
+            android:text="cancel"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:cornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

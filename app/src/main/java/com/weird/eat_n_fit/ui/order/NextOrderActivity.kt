@@ -54,7 +54,7 @@ class NextOrderActivity : AppCompatActivity() {
         val token = sharedPreferences?.getString(getString(R.string.auth_token), "")
         val idFood = intent.getStringExtra("idPacket")
         val price = intent.getStringExtra("price")
-        val packet = intent.getStringExtra("packet")
+        val packet = intent.getStringExtra("namaPacket")
         // get the references from layout file
         textview_date = this.text_view_date_1
         button_date = this.button_date_1
@@ -97,7 +97,7 @@ class NextOrderActivity : AppCompatActivity() {
             println(iduser)
 //            orderViewModel.orderFoodPacket(token!!,order)
             val intent = Intent(this,CheckoutActivity::class.java)
-             intent.putExtra("tanggal",tanggal).putExtra("waktu",waktu).putExtra("alamat",alamat).putExtra("price",price).putExtra("porsi",porsi).putExtra("nama",packet).putExtra("idPacket",idFood)
+             intent.putExtra("tanggal",tanggal).putExtra("waktu",waktu).putExtra("alamat",alamat).putExtra("price",price).putExtra("porsi",porsi).putExtra("packet",packet).putExtra("idPacket",idFood)
             overridePendingTransition( R.anim.slide_in_right,R.anim.slide_out_left);
             startActivity(intent)
             finish()

@@ -1,5 +1,7 @@
 package com.weird.eat_n_fit.ui.order
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.graphics.Bitmap
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
@@ -12,11 +14,33 @@ import kotlinx.android.synthetic.main.activity_generateqr.*
 import kotlinx.android.synthetic.main.activity_generateqr.qrcode
 
 class DetailTransactionActivity : AppCompatActivity() {
+    private var sharedPreferences: SharedPreferences? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_transaction)
-        val content = "sukses"
 
+        sharedPreferences = getSharedPreferences(
+            getString(R.string.shared_preferences_name),
+            Context.MODE_PRIVATE
+        )
+
+        val iduser = sharedPreferences?.getString(getString(R.string.user_id), "")
+        val token = sharedPreferences?.getString(getString(R.string.auth_token), "")
+        val idPacket = intent.getStringExtra("idPacket")
+        val price = intent.getStringExtra("price")
+        val alamat = intent.getStringExtra("alamat")
+        val waktu = intent.getStringExtra("waktu")
+        val tanggal = intent.getStringExtra("tanggal")
+        val porsi = intent.getStringExtra("porsi")
+        val idTrans = intent.getStringExtra("idTras")
+        val totalPorsi = intent.getStringExtra("totalPorsi")
+        val content = idTrans
+
+        tv_result_date_ck.text=tanggal
+        tv_result_time_ck.text=waktu
+        tv_idr_ck.text=price
+        tv_porsi_idr_ck.text=porsi
+        tv_content_address.text=alamat
         val writer = QRCodeWriter()
         val bitMatrix = writer.encode(content, BarcodeFormat.QR_CODE, 512, 512)
         val width = bitMatrix.width

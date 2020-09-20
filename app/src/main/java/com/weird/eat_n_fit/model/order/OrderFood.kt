@@ -14,7 +14,8 @@ class OrderFoodPacket(var user_id: String,
                       var portion:String,
                       var  start_date:String,
                       var  start_time:String,
-                    var   address:String,
+                      var   address:String,
+                      var payment_id: String="1"
 ) {
 }
 
@@ -31,4 +32,19 @@ class ResponseOrder(var trans_id: String,
                     var order_status:String,
                     var trans_status: String
 ) {
+}
+
+class TransactionUserList(var trans_id: String,
+var trans_date: String,
+var user_id: String,
+var packet_id: String,
+var portion: String,
+var total_price: String,
+var start_date: String,
+var start_time: String,
+var address: String,
+var payment_id: String,
+var order_status:String,
+var trans_status: String){
+
 }

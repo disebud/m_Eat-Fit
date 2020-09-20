@@ -1,5 +1,7 @@
 package com.weird.eat_n_fit.ui.home
 
+import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
@@ -8,6 +10,7 @@ import com.weird.eat_n_fit.R
 import com.weird.eat_n_fit.ui.order.detailmenu.cart.CartFragment
 import com.weird.eat_n_fit.ui.home.order.OrderFragment
 import com.weird.eat_n_fit.ui.home.settings.SettingsFragment
+import com.weird.eat_n_fit.ui.qrcode.ScanqrActivity
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
@@ -71,6 +74,11 @@ class HomeActivity : AppCompatActivity() {
             changeIcon(iv_menu1, R.drawable.ic_home_not_active)
             changeIcon(iv_menu2, R.drawable.ic_order_not_active)
             changeIcon(iv_menu3, R.drawable.ic_profile_active)
+        }
+
+        scanqr.setOnClickListener{
+            val intent = Intent(this,ScanqrActivity::class.java)
+            startActivity(intent)
         }
     }
 

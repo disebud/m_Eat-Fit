@@ -37,7 +37,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins_bold"
         android:textColor="@color/colorBlack"
-        android:textSize="16sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/iv_poster"
         app:layout_constraintTop_toTopOf="@+id/iv_poster"
         tools:text="ID Transaksi" />
@@ -52,7 +52,35 @@
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/iv_poster"
         app:layout_constraintTop_toBottomOf="@+id/tv_id_transaksi"
-        tools:text="Price IDR" />
+        tools:text="Date" />
+
+    <TextView
+        android:id="@+id/idtrans"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="TextView"
+        android:textColor="@color/colorBlack"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/tv_id_transaksi"
+        app:layout_constraintTop_toTopOf="@+id/tv_id_transaksi" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="TextView"
+        android:textColor="@color/colorBlack"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tv_tanggal"
+        app:layout_constraintTop_toBottomOf="@+id/idtrans"
+        app:layout_constraintVertical_bias="0.2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

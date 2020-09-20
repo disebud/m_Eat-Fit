@@ -73,23 +73,26 @@ class ScanqrActivity : AppCompatActivity(),ZXingScannerView.ResultHandler, View.
     private fun initDefaultView() {
         text_view_qr_code_value.text = ""
         button_reset.visibility = View.GONE
+        btn_pay.visibility=View.GONE
     }
 
     override fun handleResult(rawResult: Result?) {
        // text_view_qr_code_value.text = rawResult?.text
         //button_reset.visibility = View.VISIBLE
-        if(rawResult?.text == "sukses"){
-            val intent = Intent(this,
-                OrderSuccessActivity::class.java)
-            startActivity(intent)
-            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-            finish()
-        }else{
-             text_view_qr_code_value.text = rawResult?.text
+
+            text_view_qr_code_value.text = rawResult?.text
             button_reset.visibility = View.VISIBLE
+            btn_pay.visibility = View.VISIBLE
+            btn_pay.setOnClickListener {
+                val intent = Intent(this,
+                    OrderSuccessActivity::class.java)
+                startActivity(intent)
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                finish()
+            }
         }
 
-    }
+
 
     override fun onClick(view: View?) {
         when (view?.id) {

@@ -35,6 +35,30 @@ class TransactionRepository(val transactionAPI: TransactionAPI) {
         })
     }
 
+    fun MinTopUp(token: String,amount : Amount ,id:String){
+        var authToken = "Bearer ${token}"
+        println("ini amount ${amount.amount}")
+        println("ini id ${id}")
+        transactionAPI.MinTopUp(authToken,amount,id).enqueue(object : Callback<RespAmount>{
+
+            override fun onResponse(call: Call<RespAmount>, response: Response<RespAmount>) {
+                println("=============================")
+                print("FETCHING POST TRANSACTION SUCCESS -> ")
+
+                println(response.code())
+                println(response.body())
+                println("=============================")
+            }
+
+            override fun onFailure(call: Call<RespAmount>, t: Throwable) {
+                println("=============================")
+                print("FETCHING POST TRANSACTION FAILED -> ")
+                println(t)
+                println("=============================")
+            }
+        })
+    }
+
     fun TransactionWalletList(token: String,id:String){
         var authToken = "Bearer ${token}"
         transactionAPI.TransactionWalletList(authToken,id).enqueue(object : Callback<List<TransactionWallet>>{
