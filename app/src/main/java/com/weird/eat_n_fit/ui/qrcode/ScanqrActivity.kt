@@ -3,16 +3,20 @@ package com.weird.eat_n_fit.ui.qrcode
 import android.Manifest
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.activity.viewModels
 import com.google.zxing.Result
 import com.weird.eat_n_fit.R
+import com.weird.eat_n_fit.model.order.OrderViewModel
 import com.weird.eat_n_fit.ui.order.OrderSuccessActivity
 import com.weird.eat_n_fit.ui.sign.signIn.screen.SignInActivity
 import com.weird.eat_n_fit.ui.utils.CustomViewFinderView
+import com.weird.eat_n_fit.ui.wallet.transaction.TransactionViewModel
 import kotlinx.android.synthetic.main.activity_scanqr.*
 import me.dm7.barcodescanner.core.IViewFinder
 import me.dm7.barcodescanner.zxing.ZXingScannerView
@@ -20,13 +24,20 @@ import me.dm7.barcodescanner.zxing.ZXingScannerView
 class ScanqrActivity : AppCompatActivity(),ZXingScannerView.ResultHandler, View.OnClickListener  {
     private lateinit var mScannerView: ZXingScannerView
     private var isCaptured = false
-
+    private var sharedPreferences: SharedPreferences? = null
+    val orderViewModel by viewModels<OrderViewModel>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_scanqr)
         initScannerView()
         initDefaultView()
         button_reset.setOnClickListener(this)
+
+        sharedPreferences = getSharedPreferences(
+            getString(R.string.shared_preferences_name),
+            Context.MODE_PRIVATE
+        )
+
     }
 
     private fun initScannerView() {
@@ -79,11 +90,13 @@ class ScanqrActivity : AppCompatActivity(),ZXingScannerView.ResultHandler, View.
     override fun handleResult(rawResult: Result?) {
        // text_view_qr_code_value.text = rawResult?.text
         //button_reset.visibility = View.VISIBLE
-
+        val token = sharedPreferences?.getString(getString(R.string.auth_token), "")
+        val idTrans =rawResult?.text
             text_view_qr_code_value.text = rawResult?.text
             button_reset.visibility = View.VISIBLE
             btn_pay.visibility = View.VISIBLE
             btn_pay.setOnClickListener {
+                orderViewModel.PayTransaction(token!!, idTrans!!)
                 val intent = Intent(this,
                     OrderSuccessActivity::class.java)
                 startActivity(intent)

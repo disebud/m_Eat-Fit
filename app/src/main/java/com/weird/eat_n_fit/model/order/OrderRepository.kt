@@ -27,6 +27,20 @@ class OrderRepository(private val orderAPI: OrderAPI) {
         })
     }
 
+    fun PayOrder(token:String ,id:String) {
+        orderAPI.PayOrder(token,id).enqueue(object : Callback<ResponseOrder> {
+            override fun onResponse(call: Call<ResponseOrder>, response: Response<ResponseOrder>) {
+                orderTransaction.value = response.body()
+                println("inputOrder")
+                println(response.body())
+            }
+
+            override fun onFailure(call: Call<ResponseOrder>, t: Throwable) {
+                t.printStackTrace()
+            }
+        })
+    }
+
     fun getTransaction(token:String, id: String) {
         orderAPI.TransactionUser(token, id).enqueue(object : Callback<List<TransactionUserList>> {
             override fun onResponse(call: Call<List<TransactionUserList>>, response: Response<List<TransactionUserList>>) {

@@ -6,12 +6,21 @@ import android.graphics.Bitmap
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.qrcode.QRCodeWriter
 import com.weird.eat_n_fit.R
+import kotlinx.android.synthetic.main.activity_checkout.*
 import kotlinx.android.synthetic.main.activity_detail_transaction.*
+import kotlinx.android.synthetic.main.activity_detail_transaction.tv_content_address
+import kotlinx.android.synthetic.main.activity_detail_transaction.tv_idr_ck
+import kotlinx.android.synthetic.main.activity_detail_transaction.tv_porsi_idr_ck
+import kotlinx.android.synthetic.main.activity_detail_transaction.tv_result_date_ck
+import kotlinx.android.synthetic.main.activity_detail_transaction.tv_result_time_ck
 import kotlinx.android.synthetic.main.activity_generateqr.*
 import kotlinx.android.synthetic.main.activity_generateqr.qrcode
+import java.text.NumberFormat
+import java.util.*
 
 class DetailTransactionActivity : AppCompatActivity() {
     private var sharedPreferences: SharedPreferences? = null
@@ -38,9 +47,12 @@ class DetailTransactionActivity : AppCompatActivity() {
 
         tv_result_date_ck.text=tanggal
         tv_result_time_ck.text=waktu
-        tv_idr_ck.text=price
+//        tv_idr_ck.text=price
         tv_porsi_idr_ck.text=porsi
         tv_content_address.text=alamat
+        var total = price!!.toInt() * porsi!!.toInt()
+        currency(price!!.toDouble(), tv_idr_ck)
+        currency(total.toDouble(), total_trans)
         val writer = QRCodeWriter()
         val bitMatrix = writer.encode(content, BarcodeFormat.QR_CODE, 512, 512)
         val width = bitMatrix.width
@@ -52,5 +64,11 @@ class DetailTransactionActivity : AppCompatActivity() {
             }
         }
         qr_code.setImageBitmap(bitmap)
+    }
+    fun currency(harga: Double, textView: TextView) {
+        val localeID = Locale("in", "ID")
+        val formatRupiah = NumberFormat.getCurrencyInstance(localeID)
+        textView.setText(formatRupiah.format(harga as Double))
+
     }
     }

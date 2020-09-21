@@ -16,4 +16,7 @@ interface OrderAPI {
     @GET("/transactions/users/{id}")
     fun TransactionUser(@Header("Authorization") token : String,@Path("id") id: String): Call<List<TransactionUserList>>
 
+
+    @POST(" /transactions/confirm/{id}")
+    fun PayOrder(@Header("Authorization") token : String,@Path("id") id: String): Call<ResponseOrder>
 }
